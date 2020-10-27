@@ -5,11 +5,17 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Transform target;
+    private Rigidbody2D rigidBody;
+
     public float speed = 50f;
     public int damage = 50;
     
     public void Seek(Transform _target){
         target = _target;
+    }
+
+    private void Start() {
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -20,14 +26,17 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        Vector2 direction = target.position - transform.position;
+        Vector3 direction = (Vector2)target.position - rigidBody.position;
         float distancePerFrame = speed * Time.deltaTime;
 
+        //mudar para hitbox
         if(direction.magnitude <= distancePerFrame){
             HitTarget();
             return;
         }
-    
+        //rigidBody.velocity = transform.up * distancePerFrame;//transform.up * 
+
+        transform.Translate(direction.normalized * distancePerFrame);
     }
 
     public void HitTarget(){

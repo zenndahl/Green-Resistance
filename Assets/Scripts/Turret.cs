@@ -19,9 +19,6 @@ public class Turret : MonoBehaviour
     public float turnSpeed = 10;
 
     [Header("Turret Setup")]
-
-    public Transform partToRotate;
-
     public GameObject bulletPrefab;
     public Transform firePoint;
 
@@ -64,14 +61,12 @@ public class Turret : MonoBehaviour
             return;
         }
 
-        //will make the turret point in the direction of the target
-        LockOnTarget();
-
         //fire only at a determined rate
         if(shootCooldown <= 0f){
             Shoot();
             shootCooldown = 1f /fireRate;
         }
+        //decreases with time
         shootCooldown -= Time.deltaTime;
     }
 
@@ -88,8 +83,4 @@ public class Turret : MonoBehaviour
         }
     }
 
-    void LockOnTarget(){
-        //target lock on
-        Vector2 dir = target.position - transform.position;
-    }
  }

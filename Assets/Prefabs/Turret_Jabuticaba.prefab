@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 257469783140463949}
   - component: {fileID: -2229685605119200007}
   m_Layer: 0
-  m_Name: Turret_proto_1
+  m_Name: Turret_Jabuticaba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7985164031610571828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.998, y: 8.243, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.998, y: 8.243, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: 132503805faa9aa40a53481ac2e6b744, type: 3}
+  m_SortingOrder: 50
+  m_Sprite: {fileID: 21300000, guid: c194ddb9e5115f64a96a874761f8afd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,6 +101,5 @@ MonoBehaviour:
   fireRate: 1
   shootCooldown: 0.5
   turnSpeed: 10
-  partToRotate: {fileID: 1824153697004183994}
   bulletPrefab: {fileID: 1756862993770166412, guid: c729382a4b5ce68429240510390ec8a3, type: 3}
   firePoint: {fileID: 1824153697004183994}

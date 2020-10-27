@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPoint;
     private float countdown = 2f;
     private int waveIndex = 0;
+    private bool moreEnemies = false;
 
     private void Update() {
 
@@ -42,9 +43,13 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < wave.count; i++){
             //each even index, different enemy spawns
-            spawnEnemy(wave.enemy[(i % 2)]);
+            if(moreEnemies){
+                spawnEnemy(wave.enemy[(i % 2)]);
+            }
+            else{
+                spawnEnemy(wave.enemy[(0)]);
+            }
             yield return new WaitForSeconds(1f / wave.rate);
-
             
         }
 
