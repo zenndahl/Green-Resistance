@@ -8299,6 +8299,8 @@ GameObject:
   - component: {fileID: 968373693}
   - component: {fileID: 968373692}
   - component: {fileID: 968373691}
+  - component: {fileID: 968373694}
+  - component: {fileID: 968373695}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8323,8 +8325,8 @@ Camera:
   m_GameObject: {fileID: 968373690}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.754717, g: 0.5425251, b: 0.44499823, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.16037738, g: 0.14124471, b: 0.132387, a: 0.92941177}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8341,7 +8343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8365,12 +8367,46 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968373690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.95, y: 1.83, z: 0}
-  m_LocalScale: {x: 1, y: 0.9875, z: 1}
+  m_LocalPosition: {x: -3.7, y: 0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968373694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968373690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9cb7125e2ee7d347be7a7da405d8632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panSpeed: 2
+  panBorderThickness: 5
+  scrollSpeed: 3
+  minY: 0.7
+  maxY: 1
+--- !u!114 &968373695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968373690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bafed69df4c051c4cbd781868ee3067f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 3
+  targetOrtho: 0
+  smoothSpeed: 5
+  minOrtho: 1.5
+  maxOrtho: 5
 --- !u!1001 &978151896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16974,7 +17010,7 @@ GameObject:
   - component: {fileID: 1994883689}
   - component: {fileID: 1994883688}
   m_Layer: 0
-  m_Name: GameMaster
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

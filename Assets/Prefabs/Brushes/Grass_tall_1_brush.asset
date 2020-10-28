@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grass_tall_1_brush
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_Tile: {fileID: 0}
+  - m_Tile: {fileID: 11400000, guid: 95698196927399644a6fe9f9d5e34c94, type: 2}
     m_Matrix:
       e00: 1
       e01: 0

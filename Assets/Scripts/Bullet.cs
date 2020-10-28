@@ -34,8 +34,7 @@ public class Bullet : MonoBehaviour
             HitTarget();
             return;
         }
-        //rigidBody.velocity = transform.up * distancePerFrame;//transform.up * 
-
+        //Translate funciona com Vector3
         transform.Translate(direction.normalized * distancePerFrame);
     }
 
