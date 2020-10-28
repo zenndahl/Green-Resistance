@@ -8,11 +8,6 @@ public class CameraController : MonoBehaviour
     private bool doMovement = true;
     //camera speed
     public float panSpeed = 30f;
-
-    public float panBorderThickness = 10f;
-    //limit for the movement
-    public float minY = 10f;
-    public float maxY = 80f;
      
     void Update () {
         //if(GameManager.gameIsOver){
@@ -29,25 +24,25 @@ public class CameraController : MonoBehaviour
         }
 
         //camera movement up
-        if(Input.GetKey("w") || Input.mousePosition.y <= panBorderThickness){
+        if(Input.GetKey("w")){
             
             transform.Translate(Vector3.up * panSpeed * Time.deltaTime, Space.World);
         }
 
         //camera moviment down
-        if(Input.GetKey("s") || Input.mousePosition.y >= Screen.height - panBorderThickness){
+        if(Input.GetKey("s")){
             
             transform.Translate(Vector3.down * panSpeed * Time.deltaTime, Space.World);
         }
 
         //camera moviment left
-        if(Input.GetKey("a") || Input.mousePosition.x >= Screen.width - panBorderThickness){
+        if(Input.GetKey("a")){
             
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
 
         //camera moviment right
-        if(Input.GetKey("d") || Input.mousePosition.x <= panBorderThickness){
+        if(Input.GetKey("d")){
             
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }
