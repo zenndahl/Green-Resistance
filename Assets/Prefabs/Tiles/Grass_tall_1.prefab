@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4281211698522080990}
   - component: {fileID: 4877936741725560528}
   - component: {fileID: 3686150478169274328}
+  - component: {fileID: -7049973156125911855}
   m_Layer: 0
   m_Name: Grass_tall_1
   m_TagString: Untagged
@@ -95,6 +96,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea41dfec96b9a6428f5398be6486769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posOffset: {x: 0, y: 0}
-  hoverColor: {r: 0.3301887, g: 0.29125136, b: 0.29125136, a: 0.64705884}
-  notEnoughMoney: {r: 0.8867924, g: 0.25516194, b: 0.25516194, a: 0.7607843}
+  buildManager: {fileID: 0}
+  hoverColor: {r: 0.3301887, g: 0.29125136, b: 0.29125136, a: 1}
+  notEnoughMoney: {r: 0.8867924, g: 0.25516194, b: 0.25516194, a: 1}
+  posOffset: {x: 0, y: 0.25, z: 0}
+  turret: {fileID: 0}
+  turretBlueprint:
+    health: 100
+    damage: 50
+    range: 12
+    fireRate: 1
+    prefab: {fileID: 0}
+    cost: 0
+    upgrade1_Prefab: {fileID: 0}
+    upgradeCost: 0
+    upgrade2_Prefab: {fileID: 0}
+    upgrade2_Cost: 0
+  isUpgraded: 0
+--- !u!61 &-7049973156125911855
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419047740454429251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
