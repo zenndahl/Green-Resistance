@@ -6,21 +6,21 @@ public class Turret : MonoBehaviour
 {
     [Header("Enemy Setup")]
     public Transform target;
-    
     public string enemyTag = "Enemy";
 
     [Header("Turret Stats")]
-
     public float range = 15f;
-
     public int fireRate = 1;
     public float shootCooldown = 0.5f;
-
-    public float turnSpeed = 10;
 
     [Header("Turret Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public bool isMelee;
+    public bool isBurst;
+
+    [Header("Burst Settings")]
+    public GameObject burstEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +63,15 @@ public class Turret : MonoBehaviour
 
         //fire only at a determined rate
         if(shootCooldown <= 0f){
-            Shoot();
+            if(isMelee){
+                Melee();
+            }
+            else if(isBurst){
+                Burst();
+            }
+            else{
+                Shoot();
+            }
             shootCooldown = 1f /fireRate;
         }
         //decreases with time
@@ -83,4 +91,29 @@ public class Turret : MonoBehaviour
         }
     }
 
+    public void Melee(){
+        //searches all objects with the tag "Enemy"
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+    }
+
+    public void Burst(){
+        //searches all objects with the tag "Enemy"
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        //instantiate effect
+        GameObject RadialBurst = (GameObject)Instantiate(burstEffect, firePoint.position, firePoint.rotation);
+
+        foreach(GameObject enemy in enemies){
+            //gets the distance between the enemy
+            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+            //if the distance is the sortest distance, it will update and set the enemy as the nearest
+            if(distanceToEnemy < range){
+                enemy.GetComponent<Enemy>().TakeDamage(2);
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
  }

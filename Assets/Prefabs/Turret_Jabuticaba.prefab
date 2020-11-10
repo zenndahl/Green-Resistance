@@ -97,9 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTag: Enemy
-  range: 15
+  range: 1.25
   fireRate: 1
   shootCooldown: 0.5
-  turnSpeed: 10
   bulletPrefab: {fileID: 1756862993770166412, guid: c729382a4b5ce68429240510390ec8a3, type: 3}
   firePoint: {fileID: 1824153697004183994}
+  isMelee: 0
+  isBurst: 0
+  burstEffect: {fileID: 0}

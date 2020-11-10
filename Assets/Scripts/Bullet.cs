@@ -50,6 +50,6 @@ public class Bullet : MonoBehaviour
         //subtract life from enemy
         //apply any on-hit effect
         Enemy enemy = target.GetComponent<Enemy>();
-        enemy.TakeDamage();
+        enemy.TakeDamage(0);
     }
 }

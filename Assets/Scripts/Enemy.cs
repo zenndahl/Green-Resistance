@@ -43,7 +43,19 @@ public class Enemy : MonoBehaviour
         target = Waypoints.points[wavepointIndex];
     }
 
-    public void TakeDamage(){
-        Destroy(gameObject);
+    public void TakeDamage(int damageType){
+        
+        //shot damage
+        if(damageType == 0){
+            Destroy(gameObject);
+        }
+        //melee damage
+        if(damageType == 1){
+            Destroy(gameObject);
+        }
+        //burst damage
+        if(damageType == 2){
+            Destroy(gameObject);
+        }
     }
 }

@@ -54,3 +54,6 @@ TagManager:
   - name: Turrets
     uniqueID: 1635520533
     locked: 0
+  - name: Effects
+    uniqueID: 2780901455
+    locked: 0
