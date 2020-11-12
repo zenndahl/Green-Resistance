@@ -5431,10 +5431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jabuticabaTurret:
-    health: 100
-    damage: 50
-    range: 12
-    fireRate: 1
     prefab: {fileID: 7985164031610571828, guid: ce88e9c1a331fab4387a361a36c6b49f, type: 3}
     cost: 100
     upgrade1_Prefab: {fileID: 0}
@@ -5442,10 +5438,6 @@ MonoBehaviour:
     upgrade2_Prefab: {fileID: 0}
     upgrade2_Cost: 0
   ipeTurret:
-    health: 100
-    damage: 50
-    range: 12
-    fireRate: 1
     prefab: {fileID: 7985164031610571828, guid: 4a654237bee2ca04b8f187a24aa005e5, type: 3}
     cost: 150
     upgrade1_Prefab: {fileID: 0}
@@ -5453,10 +5445,6 @@ MonoBehaviour:
     upgrade2_Prefab: {fileID: 0}
     upgrade2_Cost: 0
   pinhaoTurret:
-    health: 100
-    damage: 50
-    range: 12
-    fireRate: 1
     prefab: {fileID: 0}
     cost: 0
     upgrade1_Prefab: {fileID: 0}
@@ -5464,10 +5452,6 @@ MonoBehaviour:
     upgrade2_Prefab: {fileID: 0}
     upgrade2_Cost: 0
   pequiTurret:
-    health: 100
-    damage: 50
-    range: 12
-    fireRate: 1
     prefab: {fileID: 0}
     cost: 0
     upgrade1_Prefab: {fileID: 0}
@@ -5475,10 +5459,6 @@ MonoBehaviour:
     upgrade2_Prefab: {fileID: 0}
     upgrade2_Cost: 0
   coquinhoTurret:
-    health: 100
-    damage: 50
-    range: 12
-    fireRate: 1
     prefab: {fileID: 0}
     cost: 0
     upgrade1_Prefab: {fileID: 0}

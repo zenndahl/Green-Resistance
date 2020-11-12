@@ -13,8 +13,6 @@ public class Turret : MonoBehaviour{
     public float shootCooldown = 0.5f;
     public float health = 100f;
     public float damage = 50f;
-    public float range = 12f;
-    public float fireRate = 1;
 
     [Header("Turret Setup")]
     public GameObject bulletPrefab;
