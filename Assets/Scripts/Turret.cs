@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
-{
+public class Turret : MonoBehaviour{
     [Header("Enemy Setup")]
     public Transform target;
     public string enemyTag = "Enemy";
@@ -12,6 +11,10 @@ public class Turret : MonoBehaviour
     public float range = 15f;
     public int fireRate = 1;
     public float shootCooldown = 0.5f;
+    public float health = 100f;
+    public float damage = 50f;
+    public float range = 12f;
+    public float fireRate = 1;
 
     [Header("Turret Setup")]
     public GameObject bulletPrefab;

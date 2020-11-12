@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable] //mark a non-MonoBehaviour class to show in the Inspector
-public class TurretBlueprint 
-{
-    [Header("Stats")]
-    public float health = 100f;
-    public float damage = 50f;
-    public float range = 12f;
-    public float fireRate = 1;
-
+public class TurretBlueprint {    
     [Header("Prefabs")]
     public GameObject prefab;
     public int cost;
