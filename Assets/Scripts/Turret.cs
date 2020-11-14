@@ -8,26 +8,25 @@ public class Turret : MonoBehaviour{
     public string enemyTag = "Enemy";
 
     [Header("Turret Stats")]
-    public float range = 15f;
-    public int fireRate = 1;
+    public float range;
+    public float fireRate;
     public float shootCooldown = 0.5f;
-    public float health = 100f;
-    public float damage = 50f;
 
     [Header("Turret Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public bool isMelee;
-    public bool isBurst;
+    public Attacks attacks;
 
     [Header("Burst Settings")]
     public GameObject burstEffect;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         //initiate a rotine to call the method for an amount of times 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        range = Attacks.baseRange;
+        fireRate = Attacks.baseFireRate;
+
     }
 
     void UpdateTarget(){
@@ -64,57 +63,19 @@ public class Turret : MonoBehaviour{
 
         //fire only at a determined rate
         if(shootCooldown <= 0f){
-            if(isMelee){
-                Melee();
-            }
-            else if(isBurst){
-                Burst();
-            }
-            else{
-                Shoot();
-            }
+            Attack();
             shootCooldown = 1f /fireRate;
         }
         //decreases with time
         shootCooldown -= Time.deltaTime;
     }
 
-    public void Shoot(){
-        //creates the bullet object on scene
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
-        //get the bullet component to access its variables and methods
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
-
-        //determines the target for the bullet instantiated above
-        if(bullet != null){
-            bullet.Seek(target);
-        }
-    }
-
-    public void Melee(){
-        //searches all objects with the tag "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-    }
-
-    public void Burst(){
-        //searches all objects with the tag "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        //instantiate effect
-        GameObject RadialBurst = (GameObject)Instantiate(burstEffect, firePoint.position, firePoint.rotation);
-
-        foreach(GameObject enemy in enemies){
-            //gets the distance between the enemy
-            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-            //if the distance is the sortest distance, it will update and set the enemy as the nearest
-            if(distanceToEnemy < range){
-                enemy.GetComponent<Enemy>().TakeDamage(2);
-            }
-        }
-    }
-
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public virtual void Attack(){
+        return;
     }
  }
