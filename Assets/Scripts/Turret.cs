@@ -11,53 +11,53 @@ public class Turret : MonoBehaviour{
     public float range;
     public float fireRate;
     public float shootCooldown = 0.5f;
+    public bool inRange;
 
     [Header("Turret Setup")]
-    public GameObject bulletPrefab;
     public Transform firePoint;
-    public Attacks attacks;
+    public bool isRanged;
+    //set id there are modifiers and if it is for more or for less
+    public int rangeModStatus;
+    public int fireRateModStatus;
+    public int damageModStatus;
+    public int healthModStatus;
+
+    [Header("Ranged Settings")]
+    public GameObject bulletPrefab;
 
     [Header("Burst Settings")]
     public GameObject burstEffect;
 
     // Start is called before the first frame update
-    void Start(){
+    protected virtual void Start(){
         //initiate a rotine to call the method for an amount of times 
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        range = Attacks.baseRange;
-        fireRate = Attacks.baseFireRate;
-
+        InvokeRepeating("EnemyInRange", 0f, 0.5f);
+        inRange = false;
+        //SetStats();
     }
 
-    void UpdateTarget(){
+    void EnemyInRange(){
         //searches all objects with the tag "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        //set the initial distance to infinite
-        float shortestDistance = Mathf.Infinity;
-        //initialy there is no nearest enemy
-        GameObject nearestEnemy = null;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach(GameObject enemy in enemies){
             //gets the distance between the enemy
             float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-            //if the distance is the sortest distance, it will update and set the enemy as the nearest
-            if(distanceToEnemy < shortestDistance){
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
+            //if the distance is the sortest distance, there is an enemy in range
+            if(distanceToEnemy < range){
+                inRange = true;
+                return; //if there is an enemy in range, it already did what it needed to
             }
         }
-
-        //set the target as the enemy selected as the nearest
-        if(nearestEnemy != null && shortestDistance <= range){
-            target = nearestEnemy.transform;
-        }
+        //if no enemy in range
+        inRange = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         //if no enemy in range, does nothing
-        if(target == null){
+        if(!inRange){
             return;
         }
 

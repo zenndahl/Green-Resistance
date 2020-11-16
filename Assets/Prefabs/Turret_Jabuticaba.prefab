@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824153697004183994}
   - component: {fileID: 257469783140463949}
-  - component: {fileID: -2229685605119200007}
+  - component: {fileID: -6822318258477787298}
   m_Layer: 0
   m_Name: Turret_Jabuticaba
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2229685605119200007
+--- !u!114 &-6822318258477787298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,16 +92,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7985164031610571828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a469ac259f1c94d45aad8a5741e41d11, type: 3}
+  m_Script: {fileID: 11500000, guid: adf82bfa548dc8c49b6c51dd18f1082a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTag: Enemy
-  range: 1.1
-  fireRate: 1
+  range: 0
+  fireRate: 0
   shootCooldown: 0.5
   bulletPrefab: {fileID: 1756862993770166412, guid: c729382a4b5ce68429240510390ec8a3, type: 3}
   firePoint: {fileID: 1824153697004183994}
-  isMelee: 0
-  isBurst: 0
+  isRanged: 1
   burstEffect: {fileID: 0}

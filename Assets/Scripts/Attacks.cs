@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Attacks : MonoBehaviour
 {
+    [Header("Base Stats")] 
     public static float baseDamage = 50f;
     public static float baseRange = 1.1f;
     public static float baseHealth = 50f;
     public static float baseFireRate = 1f;
 
-    public void Shoot(Transform target, GameObject bulletPrefab, Vector3 firePointPos, Quaternion firePointRot){
+    [Header("Modifiers")]
+    public static float damageMod = baseDamage * 0.5f;
+    public static float rangeMod = baseRange * 0.5f;
+    public static float fireRateMod = baseFireRate * 0.5f;
+    public static float healthMod = baseHealth * 0.5f;
+
+    public static void Shoot(Transform target, GameObject bulletPrefab, Vector3 firePointPos, Quaternion firePointRot){
         //creates the bullet object on scene
         GameObject bulletGO = GameObject.Instantiate(bulletPrefab, firePointPos, firePointRot);
 
@@ -22,7 +29,7 @@ public class Attacks : MonoBehaviour
         }
     }
 
-    public void Burst(GameObject burstEffect, Vector3 firePointPos, Quaternion firePointRot, float range){
+    public static void Burst(GameObject burstEffect, Vector3 firePointPos, Quaternion firePointRot, float range){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //instantiate effect
@@ -35,10 +42,12 @@ public class Attacks : MonoBehaviour
             if(distanceToEnemy < range){
                 enemy.GetComponent<Enemy>().TakeDamage(2);
             }
+            Debug.Log(enemy);
         }
+        Destroy(RadialBurst, 1f);
     }
 
-    public void Melee(){
+    public static void Melee(){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }

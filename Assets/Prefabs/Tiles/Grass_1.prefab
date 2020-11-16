@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1614954487877271690}
   - component: {fileID: -8510223737674105561}
   - component: {fileID: 403688867428046796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grass_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,10 +102,6 @@ MonoBehaviour:
   posOffset: {x: 0, y: 0.25, z: 0}
   turret: {fileID: 0}
   turretBlueprint:
-    health: 100
-    damage: 50
-    range: 12
-    fireRate: 1
     prefab: {fileID: 0}
     cost: 0
     upgrade1_Prefab: {fileID: 0}

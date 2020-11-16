@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Melee_Turret : Turret
+public class Turret_Melee : Turret
 {
     public override void Attack(){
 

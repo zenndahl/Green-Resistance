@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7517606943333461030}
   - component: {fileID: 4651967664150828726}
   - component: {fileID: 8631631973168784079}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RadialBurst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
