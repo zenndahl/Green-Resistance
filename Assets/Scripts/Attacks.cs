@@ -42,12 +42,25 @@ public class Attacks : MonoBehaviour
             if(distanceToEnemy < range){
                 enemy.GetComponent<Enemy>().TakeDamage(2);
             }
-            Debug.Log(enemy);
         }
         Destroy(RadialBurst, 1f);
     }
 
     public static void Melee(){
+        //searches all objects with the tag "Enemy"
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    public static void Slow(/*receives the enemy to be affected*/){
+
+    }
+
+    public static void MultipleShot(){
+        //searches all objects with the tag "Enemy"
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    public static void PiercingShot(){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }

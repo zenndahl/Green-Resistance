@@ -4,11 +4,28 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Transform target;
+    [Header("Setup")]
+    protected Transform target;
     private Rigidbody2D rigidBody;
 
-    public float speed = 50f;
-    public int damage = 50;
+    [Header("Stats")]
+    public float damage;
+    public int damageModStatus;
+    public float speed;
+
+
+    private void Awake() {
+        //setting the projectile damage
+        if(damageModStatus == 1){
+            damage = Attacks.baseDamage + Attacks.damageMod;
+        }
+        else if(damageModStatus == -1){
+            damage = Attacks.baseDamage - Attacks.damageMod;
+        }
+        else{
+            damage = Attacks.baseDamage;
+        }
+    }
     
     public void Seek(Transform _target){
         target = _target;
@@ -40,13 +57,12 @@ public class Bullet : MonoBehaviour
 
     public void HitTarget(){
         //instantiate hit effect
-
         Damage();
-        //destroy impact effect
+        //destroy hit effect
     }
 
     //this function will change to apply damage on life instead of simply destroing the target
-    public void Damage(){
+    public virtual void Damage(){
         //subtract life from enemy
         //apply any on-hit effect
         Enemy enemy = target.GetComponent<Enemy>();

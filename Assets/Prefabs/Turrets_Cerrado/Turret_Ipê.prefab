@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7985164031610571828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.998, y: 8.243, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,7 +99,13 @@ MonoBehaviour:
   enemyTag: Enemy
   range: 0
   fireRate: 0
+  health: 0
   shootCooldown: 0.5
-  bulletPrefab: {fileID: 0}
+  inRange: 0
   firePoint: {fileID: 1824153697004183994}
+  isRanged: 0
+  rangeModStatus: 0
+  fireRateModStatus: -1
+  healthModStatus: 0
+  bulletPrefab: {fileID: 0}
   burstEffect: {fileID: 5839320798863239836, guid: 6f1e40630968b0c428b933a333b1dc1f, type: 3}

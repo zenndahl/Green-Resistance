@@ -38,6 +38,7 @@ public class Turret_Ranged : Turret
         }
         inRange = false;
     }
+    
     public override void Attack(){
         Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation);
     }
