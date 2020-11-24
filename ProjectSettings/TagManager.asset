@@ -48,6 +48,9 @@ TagManager:
   - name: Path
     uniqueID: 1205135891
     locked: 0
+  - name: Bullets
+    uniqueID: 2722395875
+    locked: 0
   - name: Enemies
     uniqueID: 3535906133
     locked: 0

@@ -5,16 +5,10 @@ using UnityEngine;
 public class Attacks : MonoBehaviour
 {
     [Header("Base Stats")] 
-    public static float baseDamage = 50f;
+    public static float baseDamage = 25f;
     public static float baseRange = 1.1f;
     public static float baseHealth = 50f;
     public static float baseFireRate = 1f;
-
-    [Header("Modifiers")]
-    public static float damageMod = baseDamage * 0.5f;
-    public static float rangeMod = baseRange * 0.5f;
-    public static float fireRateMod = baseFireRate * 0.5f;
-    public static float healthMod = baseHealth * 0.5f;
 
     public static void Shoot(Transform target, GameObject bulletPrefab, Vector3 firePointPos, Quaternion firePointRot){
         //creates the bullet object on scene
@@ -29,7 +23,7 @@ public class Attacks : MonoBehaviour
         }
     }
 
-    public static void Burst(GameObject burstEffect, Vector3 firePointPos, Quaternion firePointRot, float range){
+    public static void Burst(GameObject burstEffect, Vector3 firePointPos, Quaternion firePointRot, float range, float damage){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //instantiate effect
@@ -38,9 +32,9 @@ public class Attacks : MonoBehaviour
         foreach(GameObject enemy in enemies){
             //gets the distance between the enemy
             float distanceToEnemy = Vector2.Distance(firePointPos, enemy.transform.position);
-            //if the distance is the sortest distance, it will update and set the enemy as the nearest
+            //if the distance of the enemy is less than the range, apply damage
             if(distanceToEnemy < range){
-                enemy.GetComponent<Enemy>().TakeDamage(2);
+                enemy.GetComponent<Enemy>().TakeDamage(damage);
             }
         }
         Destroy(RadialBurst, 1f);
@@ -49,10 +43,6 @@ public class Attacks : MonoBehaviour
     public static void Melee(){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-    }
-
-    public static void Slow(/*receives the enemy to be affected*/){
-
     }
 
     public static void MultipleShot(){

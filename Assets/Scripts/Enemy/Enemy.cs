@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Setup")]
     private Transform target;
     private int wavepointIndex = 0;
+    public float initSpeed;
+    public float initHealth;
 
-    public float speed = 1f;
+    [HideInInspector]
+    public float speed;
+    public float health;
 
     // Start is called before the first frame update
     void Start()
     {
         //get the first waypoint
         target = Waypoints.points[0];
+        speed = initSpeed;
+        health = initHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //move in the irection of the next waypoint
+        //move in the direction of the next waypoint
         Vector2 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);   
 
@@ -43,18 +50,9 @@ public class Enemy : MonoBehaviour
         target = Waypoints.points[wavepointIndex];
     }
 
-    public void TakeDamage(int damageType){
-        
-        //shot damage
-        if(damageType == 0){
-            Destroy(gameObject);
-        }
-        //melee damage
-        if(damageType == 1){
-            Destroy(gameObject);
-        }
-        //burst damage
-        if(damageType == 2){
+    public void TakeDamage(float damage){
+        health -= damage;
+        if(health <= 0){
             Destroy(gameObject);
         }
     }

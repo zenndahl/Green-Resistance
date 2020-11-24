@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Turret_Ranged : Turret
+public class TurretRanged : Turret
 {
     // Start is called before the first frame update
     protected override void Start(){

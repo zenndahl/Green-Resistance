@@ -11,16 +11,13 @@ public class Turret : MonoBehaviour{
     public float range;
     public float fireRate;
     public float health;
+    public float damage;
     public float shootCooldown = 0.5f;
     public bool inRange;
 
     [Header("Turret Setup")]
     public Transform firePoint;
     public bool isRanged;
-    //set if there are modifiers and if it is for more or for less
-    public int rangeModStatus;
-    public int fireRateModStatus;
-    public int healthModStatus;
 
     [Header("Ranged Settings")]
     public GameObject bulletPrefab;
@@ -28,51 +25,11 @@ public class Turret : MonoBehaviour{
     [Header("Burst Settings")]
     public GameObject burstEffect;
 
-    private void Awake() {
-        //when the turret is instantiated, it is given its stats
-        SetStats();
-    }
-
     // Start is called before the first frame update
     protected virtual void Start(){
         //initiate a rotine to call the method for an amount of times 
         InvokeRepeating("EnemyInRange", 0f, 0.5f);
         inRange = false;
-    }
-
-    public void SetStats(){
-        //setting range
-        if(rangeModStatus == 1){
-            range = Attacks.baseRange + Attacks.rangeMod;
-        }
-        else if(rangeModStatus == -1){
-            range = Attacks.baseRange - Attacks.rangeMod;
-        }
-        else{
-            range = Attacks.baseRange;
-        }
-
-        //setting fire rate
-        if(fireRateModStatus == 1){
-            fireRate = Attacks.baseFireRate + Attacks.fireRateMod;
-        }
-        else if(fireRateModStatus == -1){
-            fireRate = Attacks.baseFireRate - Attacks.fireRateMod;
-        }
-        else{
-            fireRate = Attacks.baseFireRate;
-        }
-
-        //setting health
-        if(healthModStatus == 1){
-            health = Attacks.baseFireRate + Attacks.healthMod;
-        }
-        else if(healthModStatus == -1){
-            health = Attacks.baseHealth - Attacks.healthMod;
-        }
-        else{
-            health = Attacks.baseHealth;
-        }
     }
 
     void EnemyInRange(){

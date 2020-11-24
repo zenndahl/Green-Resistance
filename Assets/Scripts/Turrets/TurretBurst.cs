@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Turret_Burst : Turret
+//[System.Serializable]
+public class TurretBurst : Turret
 {
     protected override void Start(){
         //initiate a rotine to call the method for an amount of times 
@@ -11,6 +11,6 @@ public class Turret_Burst : Turret
         inRange = false;
     }
     public override void Attack(){
-        Attacks.Burst(burstEffect, firePoint.position,  firePoint.rotation, range /*- rangeMod*/);
+        Attacks.Burst(burstEffect, firePoint.position,  firePoint.rotation, range, damage);
     } 
 }

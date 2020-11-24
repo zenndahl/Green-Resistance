@@ -7,28 +7,16 @@ public class Bullet : MonoBehaviour
     [Header("Setup")]
     protected Transform target;
     private Rigidbody2D rigidBody;
+    public bool isGrenade;
+    public Vector3 hitPoint;
 
     [Header("Stats")]
     public float damage;
-    public int damageModStatus;
     public float speed;
-
-
-    private void Awake() {
-        //setting the projectile damage
-        if(damageModStatus == 1){
-            damage = Attacks.baseDamage + Attacks.damageMod;
-        }
-        else if(damageModStatus == -1){
-            damage = Attacks.baseDamage - Attacks.damageMod;
-        }
-        else{
-            damage = Attacks.baseDamage;
-        }
-    }
     
     public void Seek(Transform _target){
         target = _target;
+        hitPoint = target.position;
     }
 
     private void Start() {
@@ -42,23 +30,27 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        Vector3 direction = (Vector2)target.position - rigidBody.position;
+        Vector3 direction;
+        if(!isGrenade){
+            direction = (Vector2)target.position - rigidBody.position;
+        }
+        else{
+            direction = (Vector2)hitPoint - rigidBody.position;
+        }
         float distancePerFrame = speed * Time.deltaTime;
 
         //mudar para hitbox
         if(direction.magnitude <= distancePerFrame){
             HitTarget();
-            return;
         }
         //Translate funciona com Vector3
         transform.Translate(direction.normalized * distancePerFrame);
     }
 
     public void HitTarget(){
-        //instantiate hit effect
+        //instantiate hit effect and sound
         Damage();
-        //destroy hit effect
+        //destroy hit effect and sound
     }
 
     //this function will change to apply damage on life instead of simply destroing the target
@@ -66,6 +58,7 @@ public class Bullet : MonoBehaviour
         //subtract life from enemy
         //apply any on-hit effect
         Enemy enemy = target.GetComponent<Enemy>();
-        enemy.TakeDamage(0);
+        enemy.TakeDamage(damage);
+        Destroy(gameObject);
     }
 }

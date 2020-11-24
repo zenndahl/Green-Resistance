@@ -9,10 +9,9 @@ public class Grenade : Bullet
     public float range;
 
     public override void Damage(){
-        //subtract life from enemy
-        //apply any on-hit effect
         Enemy enemy = target.GetComponent<Enemy>();
-        Attacks.Burst(burstEffect, transform.position, transform.rotation, range);
+        Attacks.Burst(burstEffect, transform.position, transform.rotation, range, damage);
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected() {

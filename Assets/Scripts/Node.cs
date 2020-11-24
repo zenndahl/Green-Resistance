@@ -82,7 +82,6 @@ public class Node : MonoBehaviour
         //SpriteRenderer obj = GetComponent<SpriteRenderer>();
         //Vector3 posOffset = obj.sprite.pivot;
         //Debug.Log(posOffset);
-        Debug.Log(transform.position);
         return transform.position + posOffset;
     }
 }

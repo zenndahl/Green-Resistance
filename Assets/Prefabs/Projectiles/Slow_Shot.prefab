@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6087206645898821482}
   - component: {fileID: 4529767743959180397}
   - component: {fileID: -2089490458996736992}
-  - component: {fileID: -7351652406983911928}
+  - component: {fileID: -7625182090030392408}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: Slow_Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &-7351652406983911928
+--- !u!114 &-7625182090030392408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,12 +131,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756862993770166412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a7712baa0fa1824cafba4fe614bf8cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 350e24217c468be4881769d7dd3c526b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGrenade: 1
+  isGrenade: 0
   hitPoint: {x: 0, y: 0, z: 0}
-  damage: 25
-  speed: 1
-  burstEffect: {fileID: 5839320798863239836, guid: 6f1e40630968b0c428b933a333b1dc1f, type: 3}
-  range: 0.5
+  damage: 20
+  speed: 2

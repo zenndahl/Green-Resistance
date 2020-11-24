@@ -1742,7 +1742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8449523028527215064, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectIpe
+      value: SelectMamona
       objectReference: {fileID: 0}
     - target: {fileID: 8449523028527215064, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1751,7 +1751,7 @@ PrefabInstance:
     - target: {fileID: 8449523028527215065, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dec62b8c6ae1f1646917d80ef19384a3, type: 3}
+      objectReference: {fileID: 21300000, guid: a930f1403a0265b42a40b0ba66a11c0a, type: 3}
     - target: {fileID: 8449523028527215066, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3583,7 +3583,7 @@ PrefabInstance:
     - target: {fileID: 8449523028527215065, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dec62b8c6ae1f1646917d80ef19384a3, type: 3}
+      objectReference: {fileID: 21300000, guid: 19ce161e351d05443885854dc2a95b1c, type: 3}
     - target: {fileID: 8449523028527215066, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4956,7 +4956,7 @@ PrefabInstance:
     - target: {fileID: 8449523028527215065, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dec62b8c6ae1f1646917d80ef19384a3, type: 3}
+      objectReference: {fileID: 21300000, guid: 777247d8ff9ef4e40a695fd583c02342, type: 3}
     - target: {fileID: 8449523028527215066, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5883,10 +5883,10 @@ MonoBehaviour:
   ipeTurret:
     prefab: {fileID: 7985164031610571828, guid: 4a654237bee2ca04b8f187a24aa005e5, type: 3}
     cost: 150
-    upgrade1_Prefab: {fileID: 0}
-    upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade1_Prefab: {fileID: 7985164031610571828, guid: 70e012ba868f3b841a2ee95d5b3575e9, type: 3}
+    upgradeCost: 200
+    upgrade2_Prefab: {fileID: 7985164031610571828, guid: 271bc7806a546df4a89cc1c36a2a619f, type: 3}
+    upgrade2_Cost: 250
   pinhaoTurret:
     prefab: {fileID: 7985164031610571828, guid: 85681b4e748bb0c4fabc0a4dc33a8b5c, type: 3}
     cost: 0
@@ -5895,14 +5895,14 @@ MonoBehaviour:
     upgrade2_Prefab: {fileID: 0}
     upgrade2_Cost: 0
   mamonaTurret:
-    prefab: {fileID: 0}
+    prefab: {fileID: 7985164031610571828, guid: 1fa72ed581f64e94591cbdde79246244, type: 3}
     cost: 0
     upgrade1_Prefab: {fileID: 0}
     upgradeCost: 0
     upgrade2_Prefab: {fileID: 0}
     upgrade2_Cost: 0
   coquinhoTurret:
-    prefab: {fileID: 0}
+    prefab: {fileID: 7985164031610571828, guid: 36db927fd098a6e4fbe595100627233a, type: 3}
     cost: 0
     upgrade1_Prefab: {fileID: 0}
     upgradeCost: 0
@@ -9008,7 +9008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8449523027728579486, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_Text
-      value: Jabuticabeira
+      value: Jabuticaba
       objectReference: {fileID: 0}
     - target: {fileID: 8449523028527215064, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
