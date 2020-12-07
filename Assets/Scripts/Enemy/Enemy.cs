@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);   
 
         //if it reaches the waypoint, get the next
-        if(Vector2.Distance(transform.position, target.position) <= 0.1f){
+        if(Vector2.Distance(transform.position, target.position) <= 0.01f){
             GetNextWaypoint();
         }
     }
@@ -54,6 +54,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if(health <= 0){
             Destroy(gameObject);
+            WaveSpawner.enemiesAlive--;
         }
     }
 }

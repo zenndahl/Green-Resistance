@@ -40,9 +40,13 @@ public class Attacks : MonoBehaviour
         Destroy(RadialBurst, 1f);
     }
 
-    public static void Melee(){
+    public static void Melee(Transform target, float damage){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies){
+            Enemy _enemy = target.GetComponent<Enemy>();
+            _enemy.TakeDamage(damage);
+        }
     }
 
     public static void MultipleShot(){

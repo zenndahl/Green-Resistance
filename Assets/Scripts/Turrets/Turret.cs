@@ -17,7 +17,6 @@ public class Turret : MonoBehaviour{
 
     [Header("Turret Setup")]
     public Transform firePoint;
-    public bool isRanged;
 
     [Header("Ranged Settings")]
     public GameObject bulletPrefab;

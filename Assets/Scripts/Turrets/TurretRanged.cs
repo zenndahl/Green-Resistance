@@ -11,6 +11,7 @@ public class TurretRanged : Turret
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         inRange = false;
     }
+    
 
     void UpdateTarget(){
         //searches all objects with the tag "Enemy"
