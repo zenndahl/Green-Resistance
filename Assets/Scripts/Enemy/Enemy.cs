@@ -57,4 +57,11 @@ public class Enemy : MonoBehaviour
             WaveSpawner.enemiesAlive--;
         }
     }
+
+    public void Poisoned(float poison, int duration){
+        if(poison == 0){
+            return;
+        }
+        
+    }
 }

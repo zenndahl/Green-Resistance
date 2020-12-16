@@ -40,6 +40,10 @@ public class WaveSpawner : MonoBehaviour
         //PlayerStats.rounds++;
 
         Wave wave = waves[waveIndex];
+        if(wave == null){
+            yield return 0;
+            //exibir tela de fim de fase
+        }
 
         for (int i = 0; i < wave.count; i++){
             //each even index, different enemy spawns

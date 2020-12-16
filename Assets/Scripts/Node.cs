@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public BuildManager buildManager;
-    public Color hoverColor;
     public Color notEnoughMoney;
     public Vector3 posOffset;
 
@@ -19,11 +18,8 @@ public class Node : MonoBehaviour
     [HideInInspector]
     public bool isUpgraded = false;
 
-    private Renderer rend;
-    private Color startColor;
-
     private void Start() {
-        rend = GetComponent<Renderer>();
+        //rend = GetComponent<Renderer>();
         //intantiate the build manager to allow the turret building
         buildManager = BuildManager.instance;
     }

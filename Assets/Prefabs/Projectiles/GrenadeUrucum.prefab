@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2089490458996736992}
   - component: {fileID: -7351652406983911928}
   m_Layer: 0
-  m_Name: GrenadePinhao
+  m_Name: GrenadeCaju
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,10 +71,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1572571421
-  m_SortingLayer: 3
+  m_SortingLayerID: -259536321
+  m_SortingLayer: 6
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: d621bc682add7c047bfb7b7e9f6dde3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0d10efa088e66748ace4bab488a3c04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,5 +138,5 @@ MonoBehaviour:
   hitPoint: {x: 0, y: 0, z: 0}
   damage: 25
   speed: 1
-  burstEffect: {fileID: 5839320798863239836, guid: 707c268e60252b6489a6560ee6087fcc, type: 3}
+  burstEffect: {fileID: 5839320798863239836, guid: 6f1e40630968b0c428b933a333b1dc1f, type: 3}
   range: 0.5

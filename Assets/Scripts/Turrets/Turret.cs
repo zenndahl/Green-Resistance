@@ -11,7 +11,6 @@ public class Turret : MonoBehaviour{
     public float range;
     public float fireRate;
     public float health;
-    public float damage;
     public float shootCooldown = 0.5f;
     public bool inRange;
 
@@ -20,9 +19,6 @@ public class Turret : MonoBehaviour{
 
     [Header("Ranged Settings")]
     public GameObject bulletPrefab;
-
-    [Header("Burst Settings")]
-    public GameObject burstEffect;
 
     // Start is called before the first frame update
     protected virtual void Start(){
@@ -59,6 +55,7 @@ public class Turret : MonoBehaviour{
         //fire only at a determined rate
         if(shootCooldown <= 0f){
             Attack();
+            
             shootCooldown = 1f /fireRate;
         }
         //decreases with time

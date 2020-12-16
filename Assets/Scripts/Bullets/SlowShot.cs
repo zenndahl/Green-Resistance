@@ -7,6 +7,8 @@ public class SlowShot : Bullet
     private static float slowMod = 0.5f;
     private static float slowTotal = 1f;
     private static float slowTime;
+    public float poison;
+    public int poisonDuration;
     private bool damageDone = false;
 
 
@@ -15,6 +17,7 @@ public class SlowShot : Bullet
         Enemy enemy = target.GetComponent<Enemy>();
         if(!damageDone){
             enemy.TakeDamage(damage);
+            enemy.Poisoned(poison, poisonDuration);
         }
         damageDone = true;
         Destroy(gameObject, slowTotal);

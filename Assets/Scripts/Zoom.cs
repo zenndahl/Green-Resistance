@@ -15,10 +15,10 @@
      
      void Update () {
          
-         float scroll = Input.GetAxis ("Mouse ScrollWheel");
+         float scroll = Input.GetAxis("Mouse ScrollWheel");
          if (scroll != 0.0f) {
-             targetOrtho -= scroll * zoomSpeed;
-             targetOrtho = Mathf.Clamp (targetOrtho, minOrtho, maxOrtho);
+            targetOrtho -= scroll * zoomSpeed;
+            targetOrtho = Mathf.Clamp (targetOrtho, minOrtho, maxOrtho);
          }
          
          Camera.main.orthographicSize = Mathf.MoveTowards (Camera.main.orthographicSize, targetOrtho, smoothSpeed * Time.deltaTime);

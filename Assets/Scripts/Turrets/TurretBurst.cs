@@ -5,6 +5,10 @@ using UnityEngine;
 //[System.Serializable]
 public class TurretBurst : Turret
 {
+    [Header("Burst Settings")]
+    public GameObject burstEffect;
+    public float damage;
+    
     protected override void Start(){
         //initiate a rotine to call the method for an amount of times 
         InvokeRepeating("EnemyInRange", 0f, 0.5f);
