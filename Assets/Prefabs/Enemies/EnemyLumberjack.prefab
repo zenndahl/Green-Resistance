@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4923902936365753600}
   - component: {fileID: 6795362797520025722}
   - component: {fileID: 1284247795023381456}
-  - component: {fileID: 7721251531763332472}
   - component: {fileID: -5732891298068196395}
+  - component: {fileID: -4697724385234620999}
   m_Layer: 8
   m_Name: EnemyLumberjack
   m_TagString: Enemy
@@ -101,39 +101,6 @@ MonoBehaviour:
   initHealth: 150
   speed: 1
   health: 0
---- !u!60 &7721251531763332472
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8843479040144330184}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.0076601785, y: 0.15656391}
-      - {x: -0.15723148, y: 0.005085258}
-      - {x: -0.15698066, y: -0.006091384}
-      - {x: -0.0038273614, y: -0.15723148}
-      - {x: 0.006595878, y: -0.15723148}
-      - {x: 0.15647712, y: -0.004833488}
-      - {x: 0.15622535, y: 0.0076010507}
-      - {x: 0.005840568, y: 0.15672794}
 --- !u!114 &-5732891298068196395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +122,29 @@ MonoBehaviour:
   inRange: 0
   firePoint: {fileID: 4923902936365753600}
   bulletPrefab: {fileID: 1756862993770166412, guid: b5bd386179430924a85c77082f2fd451, type: 3}
+--- !u!61 &-4697724385234620999
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843479040144330184}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+  m_EdgeRadius: 0

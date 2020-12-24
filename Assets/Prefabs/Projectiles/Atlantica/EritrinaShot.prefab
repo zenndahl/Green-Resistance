@@ -134,3 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca4d74f80710094e94272e13fa4fa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGrenade: 0
+  hitPoint: {x: 0, y: 0, z: 0}
+  damage: 0
+  speed: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2089490458996736992}
   - component: {fileID: -7351652406983911928}
   m_Layer: 0
-  m_Name: GrenadeCaju
+  m_Name: GrenadeUrucum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

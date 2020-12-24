@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4529767743959180397}
   - component: {fileID: -2089490458996736992}
   m_Layer: 0
-  m_Name: HeavyShot
+  m_Name: CacauShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
