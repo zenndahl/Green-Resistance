@@ -34,13 +34,13 @@ public class Turret : MonoBehaviour{
         foreach(GameObject enemy in enemies){
             //gets the distance between the enemy
             float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-            //if the distance is the sortest distance, there is an enemy in range
+            //if the distance is the shortest distance, there is an enemy in range
             if(distanceToEnemy < range){
                 inRange = true;
-                return; //if there is an enemy in range, it already did what it needed to
+                return;
             }
-        }
-        //if no enemy in range
+        } 
+        //if no enemy is in range
         inRange = false;
     }
 
@@ -55,7 +55,6 @@ public class Turret : MonoBehaviour{
         //fire only at a determined rate
         if(shootCooldown <= 0f){
             Attack();
-            
             shootCooldown = 1f /fireRate;
         }
         //decreases with time
@@ -69,5 +68,12 @@ public class Turret : MonoBehaviour{
 
     public virtual void Attack(){
         return;
+    }
+
+    public void TakeDamage(float damage){
+        health -= damage;
+        if(health <= 0){
+            Destroy(gameObject);
+        }
     }
  }

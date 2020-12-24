@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1824153697004183994}
   - component: {fileID: 257469783140463949}
   - component: {fileID: -6822318258477787298}
-  m_Layer: 0
+  - component: {fileID: -4984454507540330160}
+  m_Layer: 10
   m_Name: Turret_Mandacaru
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,9 +101,33 @@ MonoBehaviour:
   range: 0.6
   fireRate: 1
   health: 50
-  damage: 0
   shootCooldown: 0.5
   inRange: 0
   firePoint: {fileID: 1824153697004183994}
-  doubleShot: 0
   bulletPrefab: {fileID: 1756862993770166412, guid: b5bd386179430924a85c77082f2fd451, type: 3}
+--- !u!61 &-4984454507540330160
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7985164031610571828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.21328394}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35861254, y: 0.85343206}
+  m_EdgeRadius: 0

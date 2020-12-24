@@ -40,32 +40,10 @@ public class Attacks : MonoBehaviour
         Destroy(RadialBurst, 1f);
     }
 
-    public static void DoubleShot(Transform turret, GameObject bulletPrefab, Vector3 firePointPos, Quaternion firePointRot){
-        //searches all objects with the tag "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        //set the initial distance to infinite
-        float shortestDistance = Mathf.Infinity;
-        //initialy there is no nearest enemy
-        GameObject[] nearestEnemy = null;
-        foreach(GameObject enemy in enemies){
-            //gets the distance between the enemy
-            float distanceToEnemy = Vector2.Distance(turret.position, enemy.transform.position);
-            //if the distance is the sortest distance, it will update and set the enemy as the nearest
-            if(distanceToEnemy < shortestDistance){
-                nearestEnemy[0] = enemy;
-            }
-            if(distanceToEnemy < shortestDistance && enemy != nearestEnemy[0]){
-                shortestDistance = distanceToEnemy;
-                nearestEnemy[1] = enemy;
-            }
-            Shoot(nearestEnemy[0].transform, bulletPrefab, firePointPos, firePointRot);
-            Shoot(nearestEnemy[1].transform, bulletPrefab, firePointPos, firePointRot);
-        }
-    }
-
     public static void PiercingShot(){
-        //searches all objects with the tag "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    //     //searches all objects with the tag "Enemy"
+    //     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    //     GameObject nearestTarget
     }
 
     // public static void DamageOverTime(float damage, float duration, float rate, Transform target){

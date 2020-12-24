@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Setup")]
-    private Transform target;
+    protected Transform target;
     private int wavepointIndex = 0;
     public float initSpeed;
     public float initHealth;
@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public float health;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         //get the first waypoint
         target = Waypoints.points[0];

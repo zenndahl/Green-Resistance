@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1824153697004183994}
   - component: {fileID: 257469783140463949}
-  - component: {fileID: -6822318258477787298}
-  m_Layer: 0
-  m_Name: Turret_Aroeira
-  m_TagString: Untagged
+  - component: {fileID: -1138151451460138427}
+  - component: {fileID: 20372281387698126}
+  m_Layer: 10
+  m_Name: Turret_Banana
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6822318258477787298
+--- !u!114 &-1138151451460138427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,17 +93,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 7985164031610571828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adf82bfa548dc8c49b6c51dd18f1082a, type: 3}
+  m_Script: {fileID: 11500000, guid: 753299a1c78a6a3428e13fc0a3208a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTag: Enemy
-  range: 1.5
+  range: 1
   fireRate: 1
   health: 50
-  damage: 0
   shootCooldown: 0.5
   inRange: 0
   firePoint: {fileID: 1824153697004183994}
-  doubleShot: 0
-  bulletPrefab: {fileID: 1756862993770166412, guid: d564eb1e195bbe64d9d878a6b34d5795, type: 3}
+  bulletPrefab: {fileID: 1756862993770166412, guid: a1fa64fbbe7f48449ae9cd2585bbeb14, type: 3}
+  targets: []
+  numberOfShots: 2
+--- !u!61 &20372281387698126
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7985164031610571828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.21328394}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35861254, y: 0.85343206}
+  m_EdgeRadius: 0

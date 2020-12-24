@@ -12,7 +12,6 @@ public class TurretRanged : Turret
         inRange = false;
     }
     
-
     void UpdateTarget(){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -43,5 +42,4 @@ public class TurretRanged : Turret
     public override void Attack(){
         Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation);
     }
-    
 }
