@@ -7067,7 +7067,7 @@ MonoBehaviour:
     upgrade2_Prefab: {fileID: 0}
     upgrade2_Cost: 0
   mandacaruTurret:
-    prefab: {fileID: 7985164031610571828, guid: ce88e9c1a331fab4387a361a36c6b49f, type: 3}
+    prefab: {fileID: 7985164031610571828, guid: 2808f2f34521efe4a82cf109e6052610, type: 3}
     cost: 0
     upgrade1_Prefab: {fileID: 0}
     upgradeCost: 0
@@ -7275,8 +7275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy:
-    - {fileID: 4923902936365753600, guid: 53d8d9b3cadc63c459703859cc138dea, type: 3}
-    count: 5
+    - {fileID: 4923902936365753600, guid: 2849da1eae7550244a0650d38e88f4d6, type: 3}
+    count: 1
     rate: 1
   betweenTime: 7
   spawnPoint: {fileID: 183509461}
@@ -9871,6 +9871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd9a77af6830e5428ad056936b15321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
+  ignoreBossPoints: 1
 --- !u!4 &1901019644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5664948239315647848, guid: eb1059a5c7bd5fd4b9db536fbd0645d4, type: 3}
