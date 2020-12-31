@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Start_brush
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_Tile: {fileID: 0}
+  - m_Tile: {fileID: 11400000, guid: a8c03f5c5e3dec8438aeeb98ffa11da2, type: 2}
     m_Matrix:
       e00: 1
       e01: 0
@@ -35,5 +35,5 @@ MonoBehaviour:
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 1
-  m_Anchor: {x: 0, y: 0, z: 1}
+  m_Anchor: {x: 0.5, y: 0.5, z: 1}
   m_Prefab: {fileID: 2981089192464988093, guid: 9e095ac41258736459d3c7e6734a5930, type: 3}
