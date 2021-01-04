@@ -7,6 +7,11 @@ public class BuildManager : MonoBehaviour
     //singleton pattern
     public static BuildManager instance;
 
+    //sprites (each level will have theirs sprites)
+    public Sprite highlightGreen;
+    public Sprite highlightRed;
+    public Sprite startSprite;
+
     //there will be only one instance of the build manager
     private void Awake() {
         instance = this;

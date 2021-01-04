@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public BuildManager buildManager;
-    public Color notEnoughMoney;
     public Vector3 posOffset;
 
     [HideInInspector]
@@ -18,21 +17,44 @@ public class Node : MonoBehaviour
     [HideInInspector]
     public bool isUpgraded = false;
 
+    private SpriteRenderer rend;
+
     private void Start() {
-        //rend = GetComponent<Renderer>();
+        //get the sprite renderer of the node
+        rend = GetComponent<SpriteRenderer>();
+
         //intantiate the build manager to allow the turret building
         buildManager = BuildManager.instance;
+
+        //set the base sprite as the start sprite in the build manager
+        buildManager.startSprite = rend.sprite;
     }
 
-    private void OnMouseEnter() {
+   private void OnMouseEnter() {
 
         //verify if the mouse is over an UI element or another GameObject and prevents missclicks
         if(EventSystem.current.IsPointerOverGameObject()){
             return;
         }
 
-        //find out how to highlight the node 
-        
+        //verify if the turret object is null, preventing the hover effect to occurr if it is 
+        if(!buildManager.CanBuild){
+            return;
+        }
+
+        //apply the hover effect
+        if(buildManager.HasMoney){
+            rend.sprite = buildManager.highlightGreen; 
+        }
+        else{
+             rend.sprite = buildManager.highlightRed; 
+
+        }
+    }
+
+    //remove the hover effect after the mouse is off the node
+    private void OnMouseExit() {
+        rend.sprite = buildManager.startSprite;
     }
 
     private void OnMouseDown() {
@@ -74,10 +96,35 @@ public class Node : MonoBehaviour
         //Destroy(effect, 5f);
     }
 
+    /*public void UpgradeTurret(){
+
+        if(PlayerStats.Money < turretBlueprint.upgradeCost){
+            return;
+        }
+
+        PlayerStats.Money -= turretBlueprint.upgradeCost;
+
+        //destroy the old turret
+        Destroy(turret);
+
+        //building the upgraded turret
+        GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        turret = _turret;
+
+        isUpgraded = true;
+
+        // GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        // Destroy(effect, 5f);
+    }*/
+
+    public void SellTurret(){
+        //PlayerStats.Money += turretBlueprint.GetSellAmount();
+
+        Destroy(turret);
+        turretBlueprint = null;
+    }
+
     public Vector3 GetBuildPosition(){
-        //SpriteRenderer obj = GetComponent<SpriteRenderer>();
-        //Vector3 posOffset = obj.sprite.pivot;
-        //Debug.Log(posOffset);
         return transform.position + posOffset;
     }
 }

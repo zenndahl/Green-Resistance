@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8510223737674105561}
   - component: {fileID: 403688867428046796}
   m_Layer: 9
-  m_Name: Grass_1
+  m_Name: Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,9 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildManager: {fileID: 0}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  notEnoughMoney: {r: 0, g: 0, b: 0, a: 0}
   posOffset: {x: 0, y: 0.25, z: 0}
+  baseSprite: {fileID: 0}
+  highlightGreen: {r: 0.69803923, g: 0.91764706, b: 0.70980394, a: 0}
+  highlightRed: {r: 0.8117647, g: 0.6039216, b: 0.6039216, a: 0}
+  startColor: {r: 1, g: 1, b: 1, a: 0}
   turret: {fileID: 0}
   turretBlueprint:
     prefab: {fileID: 0}
