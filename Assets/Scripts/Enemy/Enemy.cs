@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Setup")]
     protected Transform target;
-    private int wavepointIndex = 0;
+    public int wavepointIndex = 0;
     public float initSpeed;
     public float initHealth;
 
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         //get the first waypoint
-        target = Waypoints.points[0];
+        target = Waypoints.points[wavepointIndex];
         speed = initSpeed;
         health = initHealth;
     }

@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4923902936365753600}
   - component: {fileID: 6795362797520025722}
-  - component: {fileID: -5732891298068196395}
-  - component: {fileID: -2941647336239093905}
-  - component: {fileID: 5590380657124855319}
+  - component: {fileID: 4094734191890027050}
+  - component: {fileID: -1836991233644595479}
+  - component: {fileID: -8589150153519292649}
   m_Layer: 8
-  m_Name: "BossSert\xE3o"
+  m_Name: EnemyBirdSmugler
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -759061163
   m_SortingLayer: 4
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 42f67ae0001b0404983a0c319eeeddef, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: 09edd6b19628f9c4ba883d4010ed4455, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,28 +85,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5732891298068196395
-MonoBehaviour:
+--- !u!50 &4094734191890027050
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8843479040144330184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adf82bfa548dc8c49b6c51dd18f1082a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  enemyTag: Turret
-  range: 0.7
-  fireRate: 2
-  health: 0
-  shootCooldown: 0
-  inRange: 0
-  firePoint: {fileID: 4923902936365753600}
-  bulletPrefab: {fileID: 1756862993770166412, guid: 9b3942607e17fa54fb2b006cb7ef3ffd, type: 3}
---- !u!61 &-2941647336239093905
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &-1836991233644595479
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &5590380657124855319
+--- !u!114 &-8589150153519292649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,10 +141,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8843479040144330184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f6ff284c5332ab4aabd38798fc17794, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bd258e162366554ebe4462aa7c5e3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 0.5
-  initHealth: 300
+  initSpeed: 1
+  initHealth: 100
   speed: 0
   health: 0
+  beastCounter: 3
+  beastPrefab: {fileID: 8843479040144330184, guid: 603eb64e5e5710d4185510a23ac6479c, type: 3}
+  spawnDelay: 3
+  rate: 0.3

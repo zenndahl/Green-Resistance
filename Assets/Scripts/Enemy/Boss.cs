@@ -8,7 +8,7 @@ public class Boss : Enemy
     protected override void Start()
     {
         //get the first waypoint
-        target = Waypoints.bossPoints[0];
+        target = Waypoints.bossPoints[wavepointIndex];
         speed = initSpeed;
         health = initHealth;
     }

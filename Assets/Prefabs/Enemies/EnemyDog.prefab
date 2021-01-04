@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4923902936365753600}
   - component: {fileID: 6795362797520025722}
-  - component: {fileID: -4824260820796567462}
   - component: {fileID: 4094734191890027050}
   - component: {fileID: -2890924481767027352}
+  - component: {fileID: -8383561741000719443}
   m_Layer: 8
   m_Name: EnemyDog
   m_TagString: Enemy
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8843479040144330184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.522, y: 9.512, z: 0}
+  m_LocalPosition: {x: -12.522, y: 9.512, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4824260820796567462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8843479040144330184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0927cc94f9f3bc5479d79f7941c4f068, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initSpeed: 2
-  initHealth: 50
-  speed: 0
-  health: 0
 --- !u!50 &4094734191890027050
 Rigidbody2D:
   serializedVersion: 4
@@ -148,3 +132,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &-8383561741000719443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843479040144330184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0927cc94f9f3bc5479d79f7941c4f068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initSpeed: 2
+  initHealth: 50
+  speed: 0
+  health: 0
