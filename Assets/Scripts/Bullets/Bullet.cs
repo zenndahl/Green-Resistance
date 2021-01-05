@@ -53,7 +53,6 @@ public class Bullet : MonoBehaviour
         //destroy hit effect and sound
     }
 
-    //this function will change to apply damage on life instead of simply destroing the target
     public virtual void Damage(){
         //subtract life from enemy
         //apply any on-hit effect

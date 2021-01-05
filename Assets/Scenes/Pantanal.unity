@@ -4733,7 +4733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4743,6 +4743,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &935079157
 Canvas:
   m_ObjectHideFlags: 0
@@ -5114,6 +5115,7 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
+  m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -7426,7 +7428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 28.66}
+  m_AnchoredPosition: {x: 0, y: 28.659912}
   m_SizeDelta: {x: 0, y: 57.36081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310520488
@@ -7773,6 +7775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca447adf45b2cf849b7d46a943b6113b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightGreen: {fileID: 21300000, guid: 7608662e25dc50e438dbc508d4ff0552, type: 3}
+  highlightRed: {fileID: 21300000, guid: 12f07fde8c660f84b887bb373b2c30f2, type: 3}
+  startSprite: {fileID: 21300000, guid: a30364ba03d287d4197504aad370f197, type: 3}
 --- !u!114 &1331273745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7801,7 +7806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy:
-    - {fileID: 4923902936365753600, guid: 5df0f8e7293c0734b85d1bb85fe98126, type: 3}
+    - {fileID: 4923902936365753600, guid: 39475b6aaa0a5f540bec7a76f1601280, type: 3}
     count: 1
     rate: 1
   - enemy:
@@ -7813,7 +7818,7 @@ MonoBehaviour:
     count: 5
     rate: 1
   betweenTime: 7
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 1721730757}
 --- !u!4 &1331273747
 Transform:
   m_ObjectHideFlags: 0
@@ -10433,7 +10438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBoss: 0
-  ignoreBossPoints: 0
+  ignoreBossPoints: 1
 --- !u!1001 &1901545835
 PrefabInstance:
   m_ObjectHideFlags: 0

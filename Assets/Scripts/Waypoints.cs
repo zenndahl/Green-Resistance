@@ -26,7 +26,7 @@ public class Waypoints : MonoBehaviour
     //when this object is initiated it will get every child waypoint and make a list
     public void Awake() {
         //if it is a boss will count the childs waypoints
-        if(isBoss && !ignoreBossPoints){
+        if(isBoss){
             BossWaypoints();
         }
         //if it is not a boss will count the childs of a diferent set of waypoints
@@ -34,7 +34,7 @@ public class Waypoints : MonoBehaviour
             StandardWaypoints();
         }
         //if the waypoints for both normal enemies and bosses are the same
-        else{ 
+        else if(ignoreBossPoints){ 
             BossWaypoints();
             StandardWaypoints();
         }

@@ -45,8 +45,4 @@ public class Attacks : MonoBehaviour
     //     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
     //     GameObject nearestTarget
     }
-
-    // public static void DamageOverTime(float damage, float duration, float rate, Transform target){
-    //     GameObject DOT = GameObject.Instantiate(dotPrefab, target.position, target.rotation);
-    // }
 }

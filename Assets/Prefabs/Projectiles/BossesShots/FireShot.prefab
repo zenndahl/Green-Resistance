@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6087206645898821482}
   - component: {fileID: 4529767743959180397}
   - component: {fileID: -2089490458996736992}
-  - component: {fileID: -7625182090030392408}
+  - component: {fileID: -8712746507364933384}
   m_Layer: 0
-  m_Name: MamonaSlowShot
+  m_Name: FireShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1572571421
   m_SortingLayer: 3
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 41f18d4b19e627348aa65c110650a40a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 222de9a3620bc0742b6b0057171fc597, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &-7625182090030392408
+--- !u!114 &-8712746507364933384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,10 +131,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756862993770166412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350e24217c468be4881769d7dd3c526b, type: 3}
+  m_Script: {fileID: 11500000, guid: f97d7e8a606a0b043b495b4bc8227844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isGrenade: 0
   hitPoint: {x: 0, y: 0, z: 0}
-  damage: 20
-  speed: 2
+  damage: 25
+  speed: 1
+  dotDamage: 5
+  dotDuration: 5
+  notStack: 0

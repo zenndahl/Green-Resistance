@@ -52,11 +52,11 @@ TagManager:
   - name: Bullets
     uniqueID: 2722395875
     locked: 0
-  - name: Enemies
-    uniqueID: 3535906133
-    locked: 0
   - name: Turrets
     uniqueID: 1635520533
+    locked: 0
+  - name: Enemies
+    uniqueID: 3535906133
     locked: 0
   - name: Bullets2
     uniqueID: 4035430975

@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour{
     public float health;
     public float shootCooldown = 0.5f;
     public bool inRange;
+    public bool inDOT;
 
     [Header("Turret Setup")]
     public Transform firePoint;
@@ -72,6 +73,7 @@ public class Turret : MonoBehaviour{
 
     public void TakeDamage(float damage){
         health -= damage;
+        Debug.Log("DamageDealt");
         if(health <= 0){
             Destroy(gameObject);
         }

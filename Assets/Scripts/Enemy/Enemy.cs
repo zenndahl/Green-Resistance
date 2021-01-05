@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     public float initSpeed;
     public float initHealth;
 
+    [Header("Stats")]
+    public bool inDOT;
+
     [HideInInspector]
     public float speed;
     public float health;
@@ -56,12 +59,5 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             WaveSpawner.enemiesAlive--;
         }
-    }
-
-    public void Poisoned(float poison, int duration){
-        if(poison == 0){
-            return;
-        }
-        
     }
 }
