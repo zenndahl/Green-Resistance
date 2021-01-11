@@ -13,7 +13,7 @@ public class BeastSpawnerEnemy : Enemy
     protected override void Start()
     {
         //get the first waypoint
-        target = Waypoints.points[wavepointIndex];
+        direction = Waypoints.points[wavepointIndex];
         speed = initSpeed;
         health = initHealth;
 

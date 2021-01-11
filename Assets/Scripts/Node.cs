@@ -10,6 +10,7 @@ public class Node : MonoBehaviour
 
     [HideInInspector]
     public GameObject turret;
+    public bool build = true;
 
     [HideInInspector]
     public TurretBlueprint turretBlueprint;
@@ -25,12 +26,12 @@ public class Node : MonoBehaviour
 
         //intantiate the build manager to allow the turret building
         buildManager = BuildManager.instance;
-
-        //set the base sprite as the start sprite in the build manager
-        buildManager.startSprite = rend.sprite;
     }
 
    private void OnMouseEnter() {
+
+       //set the base sprite as the start sprite in the build manager
+        buildManager.startSprite = rend.sprite;
 
         //verify if the mouse is over an UI element or another GameObject and prevents missclicks
         if(EventSystem.current.IsPointerOverGameObject()){
@@ -55,6 +56,8 @@ public class Node : MonoBehaviour
     //remove the hover effect after the mouse is off the node
     private void OnMouseExit() {
         rend.sprite = buildManager.startSprite;
+        //takes off the node sprite so the other nodes dont get the wrong sprite from the build manager
+        buildManager.startSprite = null;
     }
 
     private void OnMouseDown() {
@@ -75,8 +78,11 @@ public class Node : MonoBehaviour
             return;
         }
 
-        //building the turret above the node
-        BuildTurret(buildManager.GetTurretToBuild());
+        if(build == true){
+            //building the turret above the node if there is no building or turret 
+            BuildTurret(buildManager.GetTurretToBuild());
+        }
+        
     }
 
     void BuildTurret(TurretBlueprint blueprint){
@@ -89,11 +95,17 @@ public class Node : MonoBehaviour
 
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
+        turret.GetComponent<Turret>().node = this;
 
         turretBlueprint = blueprint;
 
         //GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         //Destroy(effect, 5f);
+    }
+
+    public void BuildBuilding(GameObject building){
+        GameObject _building = (GameObject)Instantiate(building, GetBuildPosition(), Quaternion.identity);
+        turret = _building;
     }
 
     /*public void UpgradeTurret(){

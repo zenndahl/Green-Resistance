@@ -18,6 +18,9 @@ public class Turret : MonoBehaviour{
     [Header("Turret Setup")]
     public Transform firePoint;
 
+    [HideInInspector]
+    public Node node;
+
     [Header("Ranged Settings")]
     public GameObject bulletPrefab;
 
@@ -73,7 +76,7 @@ public class Turret : MonoBehaviour{
 
     public void TakeDamage(float damage){
         health -= damage;
-        Debug.Log("DamageDealt");
+        Debug.Log("DamageDealt: " + damage);
         if(health <= 0){
             Destroy(gameObject);
         }
