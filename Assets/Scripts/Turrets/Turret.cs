@@ -14,6 +14,7 @@ public class Turret : MonoBehaviour{
     public float shootCooldown = 0.5f;
     public bool inRange;
     public bool inDOT;
+    public bool isAttacking = false;
 
     [Header("Turret Setup")]
     public Transform firePoint;
@@ -53,12 +54,14 @@ public class Turret : MonoBehaviour{
     {
         //if no enemy in range, does nothing
         if(!inRange){
+            isAttacking = false;
             return;
         }
 
         //fire only at a determined rate
         if(shootCooldown <= 0f){
             Attack();
+            isAttacking = true;
             shootCooldown = 1f /fireRate;
         }
         //decreases with time

@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4923902936365753600}
   - component: {fileID: 6795362797520025722}
-  - component: {fileID: -4824260820796567462}
   - component: {fileID: 4094734191890027050}
-  - component: {fileID: -3699601374785071392}
   - component: {fileID: -8794374087173136813}
+  - component: {fileID: -7690390137620610807}
+  - component: {fileID: 518263161572906157}
   m_Layer: 8
-  m_Name: BossAtlantica
-  m_TagString: Enemy
+  m_Name: BossAmazonia
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8843479040144330184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.522, y: 9.512, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -759061163
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 09edd6b19628f9c4ba883d4010ed4455, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4824260820796567462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8843479040144330184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0927cc94f9f3bc5479d79f7941c4f068, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initSpeed: 1
-  initHealth: 100
-  speed: 0
-  health: 0
 --- !u!50 &4094734191890027050
 Rigidbody2D:
   serializedVersion: 4
@@ -123,22 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-3699601374785071392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8843479040144330184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f6ff284c5332ab4aabd38798fc17794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initSpeed: 0
-  initHealth: 0
-  speed: 0
-  health: 0
 --- !u!61 &-8794374087173136813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +133,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &-7690390137620610807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843479040144330184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32990c753caa70e4598de32efc5d1fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavepointIndex: 0
+  initSpeed: 0.5
+  initHealth: 1000
+  inDOT: 0
+  speed: 0
+  health: 0
+--- !u!114 &518263161572906157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843479040144330184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf82bfa548dc8c49b6c51dd18f1082a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  enemyTag: Turret
+  range: 1
+  fireRate: 5
+  health: 1000
+  shootCooldown: 0
+  inRange: 0
+  inDOT: 0
+  isAttacking: 0
+  firePoint: {fileID: 4923902936365753600}
+  node: {fileID: 0}
+  bulletPrefab: {fileID: 1756862993770166412, guid: b5bd386179430924a85c77082f2fd451, type: 3}
