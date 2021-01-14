@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -293183605
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a30364ba03d287d4197504aad370f197, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,11 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildManager: {fileID: 0}
   posOffset: {x: 0, y: 0.25, z: 0}
-  baseSprite: {fileID: 0}
-  highlightGreen: {r: 0.69803923, g: 0.91764706, b: 0.70980394, a: 0}
-  highlightRed: {r: 0.8117647, g: 0.6039216, b: 0.6039216, a: 0}
-  startColor: {r: 1, g: 1, b: 1, a: 0}
+  hasBuff: 0
+  highlightGreen: {fileID: 0}
+  highlightRed: {fileID: 0}
+  startSprite: {fileID: 0}
   turret: {fileID: 0}
+  build: 1
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
@@ -121,7 +122,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

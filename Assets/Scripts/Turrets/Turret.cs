@@ -15,7 +15,6 @@ public class Turret : MonoBehaviour{
     public bool inRange;
     public bool inDOT;
     public bool isAttacking = false;
-    public bool isBuffed;
 
     [Header("Turret Setup")]
     public Transform firePoint;

@@ -7,6 +7,7 @@ public class PauBrasil : MonoBehaviour
     public float range;
     public float damageBonus;
     public float burnBonus;
+    public GameObject buffEffect;
 
     private List<GameObject> nodesBuffed;
 
@@ -15,14 +16,14 @@ public class PauBrasil : MonoBehaviour
     void Start()
     {
         nodesBuffed = new List<GameObject>();
+        SetBuffs();
     }
 
     // Update is called once per frame
-    void Update()
+    void SetBuffs()
     {
-        //searches all objects with the tag "Enemy"
+        //searches all nodes
         GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
-        GameObject[] turrets = GameObject.FindGameObjectsWithTag("Turret");
 
         foreach(GameObject node in nodes){
             //gets the distance between the node and this object
@@ -30,20 +31,25 @@ public class PauBrasil : MonoBehaviour
             //if there is an enemy in range, ad to the list of buffed nodes
             if(distanceToNode < range){
                 nodesBuffed.Add(node);
+                GameObject effect = GameObject.Instantiate(buffEffect, node.transform.position, node.transform.rotation);
+                effect.transform.parent = node.transform;
             }
         }
-
-        BuffTurret();
     }
 
-    void BuffTurret(){
-        foreach (GameObject land in nodesBuffed){
-            Node node = land.GetComponent<Node>();
-            if(node.turret != null){
-                Turret turret = node.turret.GetComponent<Turret>();
-                turret.atkDamage = damageBonus;
-                turret.isBuffed = true;
-            }
+    private void Update() {
+
+        foreach(GameObject node in nodesBuffed){
+            Node nodeObject = node.GetComponent<Node>();
+            BuffTurret(nodeObject);
+        }
+    }
+
+    void BuffTurret(Node node){
+        if(node.turret != null){
+            Turret turret = node.turret.GetComponent<Turret>();
+            Debug.Log("Chegando");
+            turret.atkDamage = damageBonus;
         }
     }
 

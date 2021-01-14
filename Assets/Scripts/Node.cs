@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
+    [Header("Setup")]
     public BuildManager buildManager;
     public Vector3 posOffset;
     public bool hasBuff = false;
