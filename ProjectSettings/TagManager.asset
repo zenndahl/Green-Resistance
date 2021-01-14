@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Turret
+  - Node
   layers:
   - Default
   - TransparentFX
@@ -43,17 +44,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Border
+    uniqueID: 1198011269
+    locked: 0
   - name: Nodes
     uniqueID: 4001783691
     locked: 0
   - name: Path
     uniqueID: 1205135891
     locked: 0
-  - name: Bullets
-    uniqueID: 2722395875
-    locked: 0
   - name: Turrets
     uniqueID: 1635520533
+    locked: 0
+  - name: Bullets
+    uniqueID: 2722395875
     locked: 0
   - name: Enemies
     uniqueID: 3535906133

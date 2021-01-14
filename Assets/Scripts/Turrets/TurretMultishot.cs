@@ -41,7 +41,7 @@ public class TurretMultishot : Turret
     public override void Attack(){
         Debug.Log("Atacando");
         foreach (Transform target in targets){
-            Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation);
+            Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation, atkDamage);
             //wait for the fire rate untill next shot
             if(!waitActive){
                 StartCoroutine(Wait());

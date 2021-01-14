@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour{
-    [Header("Enemy Setup")]
-    public Transform target;
-    public string enemyTag = "Enemy";
 
     [Header("Turret Stats")]
     public float range;
     public float fireRate;
     public float health;
+    public float atkDamage;
     public float shootCooldown = 0.5f;
+
+    [Header("Binarie Statuses")]
     public bool inRange;
     public bool inDOT;
     public bool isAttacking = false;
+    public bool isBuffed;
 
     [Header("Turret Setup")]
     public Transform firePoint;
+
+    [Header("Enemy Setup")]
+    public Transform target;
+    public string enemyTag = "Enemy";
 
     [HideInInspector]
     public Node node;
@@ -51,7 +56,7 @@ public class Turret : MonoBehaviour{
 
     // Update is called once per frame
     void Update()
-    {
+    {          
         //if no enemy in range, does nothing
         if(!inRange){
             isAttacking = false;

@@ -10,12 +10,14 @@ public class Attacks : MonoBehaviour
     public static float baseHealth = 50f;
     public static float baseFireRate = 1f;
 
-    public static void Shoot(Transform target, GameObject bulletPrefab, Vector3 firePointPos, Quaternion firePointRot){
+    public static void Shoot(Transform target, GameObject bulletPrefab, Vector3 firePointPos, 
+                            Quaternion firePointRot, float damage){
         //creates the bullet object on scene
         GameObject bulletGO = GameObject.Instantiate(bulletPrefab, firePointPos, firePointRot);
 
         //get the bullet component to access its variables and methods
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.damage = damage;
 
         //determines the target for the bullet instantiated above
         if(bullet != null){
@@ -23,7 +25,8 @@ public class Attacks : MonoBehaviour
         }
     }
 
-    public static void Burst(GameObject burstEffect, Vector3 firePointPos, Quaternion firePointRot, float range, float damage){
+    public static void Burst(GameObject burstEffect, Vector3 firePointPos, 
+                            Quaternion firePointRot, float range, float damage){
         //searches all objects with the tag "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //instantiate effect

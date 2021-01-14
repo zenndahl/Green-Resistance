@@ -7,9 +7,8 @@ public class TurretBurst : Turret
 {
     [Header("Burst Settings")]
     public GameObject burstEffect;
-    public float damage;
     
     public override void Attack(){
-        Attacks.Burst(burstEffect, firePoint.position,  firePoint.rotation, range, damage);
+        Attacks.Burst(burstEffect, firePoint.position,  firePoint.rotation, range, atkDamage);
     } 
 }

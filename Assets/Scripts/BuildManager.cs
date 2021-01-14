@@ -15,11 +15,6 @@ public class BuildManager : MonoBehaviour
     private TurretBlueprint turretToBuild;
     private Node selectedNode;
 
-    //sprites (each level will have theirs sprites)
-    public Sprite highlightGreen;
-    public Sprite highlightRed;
-    public Sprite startSprite;
-
     public void SelectNode(Node node){
 
         if(selectedNode == node){

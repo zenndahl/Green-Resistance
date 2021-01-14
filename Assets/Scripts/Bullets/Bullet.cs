@@ -7,12 +7,17 @@ public class Bullet : MonoBehaviour
     [Header("Setup")]
     protected Transform target;
     private Rigidbody2D rigidBody;
-    public bool isGrenade;
-    public Vector3 hitPoint;
 
     [Header("Stats")]
-    public float damage;
     public float speed;
+
+    [HideInInspector]
+    public float damage;
+
+    [Header("Grenadier Turret Setup")]
+    //only used by grenade turrets
+    public bool isGrenade;
+    public Vector3 hitPoint;
     
     public void Seek(Transform _target){
         target = _target;

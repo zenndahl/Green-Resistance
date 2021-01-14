@@ -21,6 +21,7 @@ public class Empresario : Boss
     void Awake(){
         //initiate a rotine to call the method for an amount of times 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("StopIfAttacking", 0f, 0.5f);
         inRange = false;
     }
     
@@ -78,7 +79,17 @@ public class Empresario : Boss
     }
     
     public void Attack(){
-        Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation);        
+        Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation, 9999);        
+    }
+
+    //if attacking, stop movement
+    void StopIfAttacking(){
+        if(this.GetComponent<Turret>().isAttacking){
+            speed = 0;
+            return;
+        }
+        speed = initSpeed;
+        return;
     }
 
     private void OnDrawGizmosSelected() {

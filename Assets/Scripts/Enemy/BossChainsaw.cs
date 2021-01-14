@@ -5,10 +5,10 @@ using UnityEngine;
 public class BossChainsaw : Boss
 {
     private void Awake() {
-        InvokeRepeating("CheckIfSawing", 0f, 0.5f);
+        InvokeRepeating("StopIfAttacking", 0f, 0.5f);
     }
 
-    void CheckIfSawing(){
+    void StopIfAttacking(){
         if(this.GetComponent<Turret>().isAttacking){
             speed = 0;
             return;

@@ -7,6 +7,13 @@ public class Node : MonoBehaviour
 {
     public BuildManager buildManager;
     public Vector3 posOffset;
+    public bool hasBuff = false;
+
+    [Header("Node Highlights")]
+    //sprites (each level will have theirs sprites)
+    public Sprite highlightGreen;
+    public Sprite highlightRed;
+    public Sprite startSprite;
 
     [HideInInspector]
     public GameObject turret;
@@ -18,7 +25,7 @@ public class Node : MonoBehaviour
     [HideInInspector]
     public bool isUpgraded = false;
 
-    private SpriteRenderer rend;
+    protected SpriteRenderer rend;
 
     private void Start() {
         //get the sprite renderer of the node
@@ -26,13 +33,11 @@ public class Node : MonoBehaviour
 
         //intantiate the build manager to allow the turret building
         buildManager = BuildManager.instance;
+        //set the base sprite as the start sprite in the build manager
+        startSprite = rend.sprite;
     }
 
    private void OnMouseEnter() {
-
-       //set the base sprite as the start sprite in the build manager
-        buildManager.startSprite = rend.sprite;
-
         //verify if the mouse is over an UI element or another GameObject and prevents missclicks
         if(EventSystem.current.IsPointerOverGameObject()){
             return;
@@ -45,19 +50,16 @@ public class Node : MonoBehaviour
 
         //apply the hover effect
         if(buildManager.HasMoney){
-            rend.sprite = buildManager.highlightGreen; 
+            rend.sprite = highlightGreen;
         }
         else{
-             rend.sprite = buildManager.highlightRed; 
-
+            rend.sprite = highlightRed;
         }
     }
 
     //remove the hover effect after the mouse is off the node
     private void OnMouseExit() {
-        rend.sprite = buildManager.startSprite;
-        //takes off the node sprite so the other nodes dont get the wrong sprite from the build manager
-        buildManager.startSprite = null;
+        rend.sprite = startSprite;
     }
 
     private void OnMouseDown() {
@@ -95,6 +97,10 @@ public class Node : MonoBehaviour
 
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
+        turret.transform.parent = this.transform;
+        if(hasBuff){
+            Buff();
+        }
         turret.GetComponent<Turret>().node = this;
 
         turretBlueprint = blueprint;
@@ -106,6 +112,10 @@ public class Node : MonoBehaviour
     public void BuildBuilding(GameObject building){
         GameObject _building = (GameObject)Instantiate(building, GetBuildPosition(), Quaternion.identity);
         turret = _building;
+    }
+
+    protected virtual void Buff(){
+        return;
     }
 
     /*public void UpgradeTurret(){

@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1635520533
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: bb67130aad3232e4a86fadd255d68b0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,14 +97,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753299a1c78a6a3428e13fc0a3208a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  enemyTag: Enemy
   range: 1
   fireRate: 1
   health: 50
+  atkDamage: 25
   shootCooldown: 0.5
   inRange: 0
+  inDOT: 0
+  isAttacking: 0
+  isBuffed: 0
   firePoint: {fileID: 1824153697004183994}
+  target: {fileID: 0}
+  enemyTag: Enemy
+  node: {fileID: 0}
   bulletPrefab: {fileID: 1756862993770166412, guid: a1fa64fbbe7f48449ae9cd2585bbeb14, type: 3}
   targets: []
   numberOfShots: 2

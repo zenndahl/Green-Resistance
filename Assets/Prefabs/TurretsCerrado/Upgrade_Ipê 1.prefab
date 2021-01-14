@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5256532434927550003}
   - component: {fileID: -2107388219250929719}
   m_Layer: 10
-  m_Name: "Upgrade_Ip\xEA"
+  m_Name: "Upgrade_Ip\xEA 1"
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1635520533
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 777247d8ff9ef4e40a695fd583c02342, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,17 +97,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2173a59adb76042a6db31d23e7524e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  enemyTag: Enemy
-  range: 0.7
+  range: 1
   fireRate: 1
   health: 50
+  atkDamage: 25
   shootCooldown: 0.5
   inRange: 0
+  inDOT: 0
+  isAttacking: 0
+  isBuffed: 0
   firePoint: {fileID: 1824153697004183994}
+  target: {fileID: 0}
+  enemyTag: Enemy
+  node: {fileID: 0}
   bulletPrefab: {fileID: 0}
   burstEffect: {fileID: 5839320798863239836, guid: 6f1e40630968b0c428b933a333b1dc1f, type: 3}
-  damage: 25
 --- !u!61 &5256532434927550003
 BoxCollider2D:
   m_ObjectHideFlags: 0

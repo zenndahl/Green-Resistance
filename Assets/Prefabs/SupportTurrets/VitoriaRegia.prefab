@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 257469783140463949}
   - component: {fileID: -8140791947629368032}
   - component: {fileID: -3525809630513174680}
+  - component: {fileID: -2473239865641904316}
   m_Layer: 10
   m_Name: VitoriaRegia
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7985164031610571828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.998, y: 8.243, z: 1}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1635520533
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 180f5492fce5a7440ac462f0e3ff26d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 082b172489c4f734093b98b82c845300, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21328394}
+  m_Offset: {x: 0.0032884479, y: -0.0028230548}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35861254, y: 0.85343206}
+  m_Size: {x: 0.3191511, y: 0.3207029}
   m_EdgeRadius: 0
 --- !u!50 &-3525809630513174680
 Rigidbody2D:
@@ -131,3 +132,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2473239865641904316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7985164031610571828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06953dc2b999fdc4cb0271d26c1df8c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildManager: {fileID: 0}
+  posOffset: {x: 0, y: 0.25, z: 0}
+  hasBuff: 1
+  highlightGreen: {fileID: 21300000, guid: c0557cdeec653d84d8cb3a59b9b67970, type: 3}
+  highlightRed: {fileID: 21300000, guid: b76c622857050b645ab07be834dfa9fa, type: 3}
+  startSprite: {fileID: 0}
+  turret: {fileID: 0}
+  build: 1
+  turretBlueprint:
+    prefab: {fileID: 0}
+    cost: 0
+    upgrade1_Prefab: {fileID: 0}
+    upgradeCost: 0
+    upgrade2_Prefab: {fileID: 0}
+    upgrade2_Cost: 0
+  isUpgraded: 0
+  wavepointIndex: 0
+  speed: 0.5
+  floatPoints: {fileID: 0}
+  fireRateBuff: 1

@@ -40,6 +40,6 @@ public class TurretRanged : Turret
     }
     
     public override void Attack(){
-        Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation);
+        Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation, atkDamage);
     }
 }
