@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1824153697004183994}
   - component: {fileID: 257469783140463949}
   - component: {fileID: -1708695114052220186}
-  - component: {fileID: 5270053348947162146}
   - component: {fileID: 1787415157}
+  - component: {fileID: -3380342371310646180}
   m_Layer: 10
   m_Name: Pau-Brasil
   m_TagString: Turret
@@ -106,22 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5270053348947162146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7985164031610571828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee63e9b24bba3d84c987594d6da06a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 1
-  damageBonus: 15
-  burnBonus: 0
-  buffEffect: {fileID: 6813464271734900623, guid: 9a51b358961140240ab1457fdd962b9d, type: 3}
 --- !u!61 &1787415157
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +132,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &-3380342371310646180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7985164031610571828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088dca817a52a74459755eb8076c84b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 1
+  buffEffect: {fileID: 6813464271734900623, guid: 9a51b358961140240ab1457fdd962b9d, type: 3}
+  bulletPrefab: {fileID: 1756862993770166412, guid: 209bd3f32fa7939489fd7c6e03e75a5d, type: 3}
+  damageBonus: 25
+  fireRateBonus: 0

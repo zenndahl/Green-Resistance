@@ -11,10 +11,12 @@ public class Turret : MonoBehaviour{
     public float atkDamage;
     public float shootCooldown = 0.5f;
 
-    [Header("Binarie Statuses")]
+    [Header("Conditional Status")]
     public bool inRange;
     public bool inDOT;
     public bool isAttacking = false;
+    public bool isBuffed = false;
+    public bool isRanged = false;
 
     [Header("Turret Setup")]
     public Transform firePoint;

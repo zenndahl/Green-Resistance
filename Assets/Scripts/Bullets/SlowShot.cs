@@ -24,6 +24,7 @@ public class SlowShot : Bullet
         if(target == null) return;
         Enemy enemy = target.GetComponent<Enemy>();
         enemy.speed = (enemy.initSpeed * slowMod);
+        //this.GetComponent<SpriteRenderer>().sortingLayerName = "Turret";
     }
 
     private void OnDestroy() {
