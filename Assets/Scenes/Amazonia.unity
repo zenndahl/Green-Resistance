@@ -10367,8 +10367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 28.660034}
-  m_SizeDelta: {x: 0, y: 57.36081}
+  m_AnchoredPosition: {x: 0, y: 41.830368}
+  m_SizeDelta: {x: 0, y: 83.7015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310520488
 MonoBehaviour:
@@ -10426,7 +10426,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 1
+  m_Spacing: 5
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -10447,180 +10447,230 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jabuticabaTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 7985164031610571828, guid: ce88e9c1a331fab4387a361a36c6b49f, type: 3}
     cost: 100
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   ipeTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 7985164031610571828, guid: 4a654237bee2ca04b8f187a24aa005e5, type: 3}
     cost: 150
-    upgrade1_Prefab: {fileID: 7985164031610571828, guid: 70e012ba868f3b841a2ee95d5b3575e9, type: 3}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 200
-    upgrade2_Prefab: {fileID: 7985164031610571828, guid: 271bc7806a546df4a89cc1c36a2a619f, type: 3}
-    upgrade2_Cost: 250
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   pinhaoTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 7985164031610571828, guid: 85681b4e748bb0c4fabc0a4dc33a8b5c, type: 3}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   mamonaTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 7985164031610571828, guid: 1fa72ed581f64e94591cbdde79246244, type: 3}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   coquinhoTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 7985164031610571828, guid: 36db927fd098a6e4fbe595100627233a, type: 3}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   mandacaruTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   bromeliaTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   cajuTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   aroeiraTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   jamboTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   acaiTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   cocoTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   palmeiraTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   bananaTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   eritrinaTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   figoTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   ipe2Turret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   abacaxiTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   pequiTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   tamarindoTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   guaranaTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   castanhaTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   urucumTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   carnivoraTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   cacauTurret:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
 --- !u!1001 &1313248340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10849,6 +10899,7 @@ MonoBehaviour:
     rate: 1
   betweenTime: 7
   spawnPoint: {fileID: 336524312}
+  waveCountdownTimer: {fileID: 0}
 --- !u!4 &1331273747
 Transform:
   m_ObjectHideFlags: 0
@@ -16809,7 +16860,7 @@ PrefabInstance:
     - target: {fileID: 8449523028527215065, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bb67130aad3232e4a86fadd255d68b0b, type: 3}
+      objectReference: {fileID: 21300000, guid: 7a4fee15737eb15428d04b249cc330de, type: 3}
     - target: {fileID: 8449523028527215065, guid: c15f14638ec091640b947479ff80a34a, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
