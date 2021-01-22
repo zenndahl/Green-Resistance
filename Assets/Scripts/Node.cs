@@ -24,7 +24,7 @@ public class Node : MonoBehaviour
     public TurretBlueprint turretBlueprint;
 
     [HideInInspector]
-    public bool isUpgraded = false;
+    public int isUpgraded = 0;
 
     protected SpriteRenderer rend;
 
@@ -38,7 +38,7 @@ public class Node : MonoBehaviour
         startSprite = rend.sprite;
     }
 
-   private void OnMouseEnter() {
+    private void OnMouseEnter() {
         //verify if the mouse is over an UI element or another GameObject and prevents missclicks
         if(EventSystem.current.IsPointerOverGameObject()){
             return;
@@ -88,23 +88,32 @@ public class Node : MonoBehaviour
         
     }
 
+    //receives the blueprint with the prefab and cost of the turret to build
     void BuildTurret(TurretBlueprint blueprint){
         
-        if(PlayerStats.Money < blueprint.cost){
+        //if the money is not enough, return
+        if(PlayerStats.money < blueprint.cost){
             return;
         }
 
-        PlayerStats.Money -= blueprint.cost;
+        //subtracts player money by the turret cost
+        PlayerStats.money -= blueprint.cost;
 
+        //instantiate the turret and set the node references for the turret and the blueprint used
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
+        turretBlueprint = blueprint;
+
+        //makes the turret a child of the node, so it can move with it in special cases
         turret.transform.parent = this.transform;
+
+        //if the turret is buffed by a node or support plant
         if(hasBuff){
             Buff();
         }
-        turret.GetComponent<Turret>().node = this;
 
-        turretBlueprint = blueprint;
+        //attributes the node to the turret
+        turret.GetComponent<Turret>().node = this;
 
         //GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         //Destroy(effect, 5f);
@@ -113,40 +122,49 @@ public class Node : MonoBehaviour
     public void BuildBuilding(GameObject building){
         GameObject _building = (GameObject)Instantiate(building, GetBuildPosition(), Quaternion.identity);
         turret = _building;
+        //animation for the building spawn
     }
 
+    //will be used by special nodes
     protected virtual void Buff(){
         return;
     }
 
-    /*public void UpgradeTurret(){
+    //called when the upgrade button on the UI is pressed
+    public void UpgradeTurret(){
 
-        if(PlayerStats.Money < turretBlueprint.upgradeCost){
+        //if not enough money, dont do the upgrade
+        if(PlayerStats.money < turretBlueprint.upgradeCost){
             return;
         }
 
-        PlayerStats.Money -= turretBlueprint.upgradeCost;
+        //if there is enough money, it is subtracted by the upgrade cost
+        PlayerStats.money -= turretBlueprint.upgradeCost;
 
         //destroy the old turret
         Destroy(turret);
 
         //building the upgraded turret
-        GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        GameObject _turret = (GameObject)Instantiate(turretBlueprint.GetPrefab(), GetBuildPosition(), Quaternion.identity);
         turret = _turret;
+        //here, the blueprint is the same, so there is no need for a new attribution
 
-        isUpgraded = true;
+        //there is a limit of 2 upgrades for the upgradable turrets, so this keeps track of it
+        isUpgraded++;
 
         // GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         // Destroy(effect, 5f);
-    }*/
-
-    public void SellTurret(){
-        //PlayerStats.Money += turretBlueprint.GetSellAmount();
-
-        Destroy(turret);
-        turretBlueprint = null;
     }
 
+    //remove the turret from the node and get some money back
+    public void SellTurret(){
+        PlayerStats.money += turretBlueprint.GetSellAmount();
+        Destroy(turret);
+        turretBlueprint = null;
+        isUpgraded = 0;
+    }
+
+    //returns the position to build the turrets, that is the pivot + the offset
     public Vector3 GetBuildPosition(){
         return transform.position + posOffset;
     }

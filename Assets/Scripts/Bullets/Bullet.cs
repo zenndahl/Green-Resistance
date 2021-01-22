@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
         }
         float distancePerFrame = speed * Time.deltaTime;
 
-        //mudar para hitbox
+        //mudar para hitbox?
         if(direction.magnitude <= distancePerFrame){
             HitTarget();
         }
@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(direction.normalized * distancePerFrame);
     }
 
-    public void HitTarget(){
+    public virtual void HitTarget(){
         //instantiate hit effect and sound
         Damage();
         //destroy hit effect and sound

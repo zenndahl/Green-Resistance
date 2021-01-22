@@ -56,7 +56,7 @@ public class Turret : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {          
         //if no enemy in range, does nothing
         if(!inRange){

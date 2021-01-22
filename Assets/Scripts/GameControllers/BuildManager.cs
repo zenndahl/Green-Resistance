@@ -47,5 +47,5 @@ public class BuildManager : MonoBehaviour
     public bool CanBuild{get{return turretToBuild != null;}}
 
     //check if there is enough money to purschase selected turret
-    public bool HasMoney{get{return PlayerStats.Money >= turretToBuild.cost;}}
+    public bool HasMoney{get{return PlayerStats.money >= turretToBuild.cost;}}
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -8,7 +9,9 @@ public class WaveSpawner : MonoBehaviour
     public static int enemiesAlive = 0;
     public float betweenTime = 7f;
     public Transform spawnPoint;
-    private float countdown = 2f;
+    public Text waveCountdownTimer;
+
+    private float countdown = 10f;
     private int waveIndex = 0;
     private bool moreEnemies = false;
 
@@ -16,7 +19,11 @@ public class WaveSpawner : MonoBehaviour
 
         //if there is at leat one enemy alive, the next countdown will not begin
         if(enemiesAlive > 0){
+            waveCountdownTimer.enabled = false;
             return;
+        }
+        else{
+            waveCountdownTimer.enabled = true;
         }
 
         //when the coutdown ends, a coroutine will begin and instantiate the enemies
@@ -25,13 +32,15 @@ public class WaveSpawner : MonoBehaviour
             countdown = betweenTime; //reset the countdown
             return;
         }
+        //update the time between waves
         countdown -= Time.deltaTime;
-
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        //waveCountdownTimer.text = string.Format("{0:00.00}", countdown);
+        //update the timer UI
+        waveCountdownTimer.text = string.Format("{0:00.00}", countdown);
+        waveCountdownTimer.text = Mathf.Round(countdown).ToString();
 
-        //waveCountdownTimer.text = Mathf.Round(countdown).ToString();
+        //fazer a contagem desaparecer enquanto tiver inimigos na tela
     }
 
 

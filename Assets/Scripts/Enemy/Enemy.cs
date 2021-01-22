@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int wavepointIndex = 0;
     public float initSpeed;
     public float initHealth;
+    public int reward;
 
     [Header("Stats")]
     public bool inDOT;
@@ -40,12 +41,11 @@ public class Enemy : MonoBehaviour
     }
 
     protected void GetNextWaypoint(){
-        //if the enemy gets to the last waypoint, decreases the player lives and estroy the enemy
+        //if the enemy gets to the last waypoint, decreases the player lives and destroy the enemy
         if(wavepointIndex >= Waypoints.points.Length - 1){
             Destroy(gameObject);
-            Debug.Log("Inimigo Chegou no Objetivo");
             WaveSpawner.enemiesAlive--;
-            //PlayerStats.Lives -= 1;
+            PlayerStats.lives -= 1;
             return;
         }
         //while it is not the last waypoint, get the next waypoint in the array
@@ -56,8 +56,13 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage){
         health -= damage;
         if(health <= 0){
-            Destroy(gameObject);
-            WaveSpawner.enemiesAlive--;
+            Die();
         }
+    }
+
+    void Die(){
+        PlayerStats.money += reward;
+        Destroy(gameObject);
+        WaveSpawner.enemiesAlive--;
     }
 }
