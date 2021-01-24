@@ -6,6 +6,7 @@ using UnityEngine;
 public class LifesUI : MonoBehaviour
 {
     public Text livesText;
+    
     void Update(){
         livesText.text = "Vidas: " + PlayerStats.lives.ToString();
     }
