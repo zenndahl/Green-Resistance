@@ -17,11 +17,11 @@ public class Empresario : Boss
     public float shootCooldown = 2f;
     public float stopTime;
     public bool inRange;
+    public bool isAttacking;
 
     void Awake(){
         //initiate a rotine to call the method for an amount of times 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        InvokeRepeating("StopIfAttacking", 0f, 0.5f);
         inRange = false;
     }
     
@@ -34,10 +34,13 @@ public class Empresario : Boss
         GameObject nearestEnemy = null;
 
         foreach(GameObject enemy in enemies){
+            if(enemy.transform == null) return;
             //gets the distance between the enemy
             float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+            Debug.Log("Aqui 1");
             //if the distance is the sortest distance, it will update and set the enemy as the nearest
             if(distanceToEnemy < shortestDistance){
+                Debug.Log("Aqui 2");
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
                 inRange = true;
@@ -46,6 +49,7 @@ public class Empresario : Boss
 
         //set the target as the enemy selected as the nearest
         if(nearestEnemy != null && shortestDistance <= range){
+            Debug.Log("Aqui 3");
             target = nearestEnemy.transform;
             return;
         }
@@ -72,24 +76,22 @@ public class Empresario : Boss
         //fire only at a determined rate
         if(shootCooldown <= 0f){
             Attack();
-            shootCooldown = 1f /fireRate;
+            shootCooldown = 1f/fireRate;
         }
         //decreases with time
         shootCooldown -= Time.deltaTime;
+        
     }
     
     public void Attack(){
-        Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation, 9999);        
+        StartCoroutine(StopToAttack());
+        Attacks.Shoot(target, bulletPrefab, firePoint.position, firePoint.rotation, 9999);
     }
 
-    //if attacking, stop movement
-    void StopIfAttacking(){
-        if(this.GetComponent<Turret>().isAttacking){
-            speed = 0;
-            return;
-        }
+    IEnumerator StopToAttack(){
+        speed = 0;
+        yield return new WaitForSeconds(stopTime);
         speed = initSpeed;
-        return;
     }
 
     private void OnDrawGizmosSelected() {
