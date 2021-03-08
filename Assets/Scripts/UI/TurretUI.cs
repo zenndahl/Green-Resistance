@@ -13,24 +13,23 @@ public class TurretUI : MonoBehaviour
 
     public Text sellAmount;
 
-    public void SetTarget(Node _target){
-        target = _target;
+    
 
-        transform.position = target.GetBuildPosition();
-
-        if(target.isUpgraded < 2){
+    public void SetTurretUI(Node target){
+        if(target.turretBlueprint.wichUpgrade < 2){
             upgradeCost.text = "R$" + target.turretBlueprint.upgradeCost;
             upgradeButton.interactable = true;
         }
-            
         else{ 
-            upgradeCost.text = "Upgraded!";
+            upgradeCost.text = "No Máximo!";
             upgradeButton.interactable = false;
         }
 
         sellAmount.text = "R$" + target.turretBlueprint.GetSellAmount();
-        
+        ui.SetActive(true);
+    }
 
+    public void Show(){
         ui.SetActive(true);
     }
 

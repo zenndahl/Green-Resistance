@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad = "Cerrado";
+    public string levelToLoad = "Pantanal";
 
     public void Play(){
         Debug.Log("Loading " + levelToLoad);
