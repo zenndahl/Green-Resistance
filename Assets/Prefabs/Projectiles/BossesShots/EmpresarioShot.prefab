@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6797828365395437531}
   - component: {fileID: -1513158516798632433}
   m_Layer: 0
-  m_Name: EmpresarioAttack
+  m_Name: EmpresarioShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1572571421
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843a70c3aff4e0e48978483dbce4dad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  damage: 9999
   isGrenade: 0
   hitPoint: {x: 0, y: 0, z: 0}
-  damage: 9999
-  speed: 5
-  buildingPrefab: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+  buildingPrefab: {fileID: 7407254180414340830, guid: 1189667214a915844bce5ac32d720e8a, type: 3}
