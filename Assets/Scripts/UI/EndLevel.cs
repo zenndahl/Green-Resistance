@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-    public Text roundsText;
+    //public Text roundsText;
     public Text goldText;
     public Text enemiesText;
 
     void OnEnable(){
         // roundsText.text = PlayerStats.rounds.ToString();
-        // goldText.text = PlayerStats.money.ToString();
-        // enemiesText.text = PlayerStats.enemiesKilled.ToString();
+        goldText.text = PlayerStats.money.ToString();
+        enemiesText.text = PlayerStats.enemiesKilled.ToString();
     }
 
     public void PlayAgain(){
