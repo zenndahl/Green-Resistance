@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1635520533
   m_SortingLayer: 4
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: bb67130aad3232e4a86fadd255d68b0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a38408aabca8ca24abf658ff703fd1d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   inDOT: 0
   isAttacking: 0
   isBuffed: 0
+  isRanged: 0
   firePoint: {fileID: 1824153697004183994}
   target: {fileID: 0}
   enemyTag: Enemy
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

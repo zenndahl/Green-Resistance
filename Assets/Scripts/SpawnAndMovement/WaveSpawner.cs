@@ -63,10 +63,10 @@ public class WaveSpawner : MonoBehaviour
                 spawnEnemy(wave.enemy[(0)]);
             }
             yield return new WaitForSeconds(1f / wave.rate);
-            
         }
 
         waveIndex++;
+        PlayerStats.rounds = waveIndex;
     }
 
     void spawnEnemy(Transform enemy){

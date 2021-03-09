@@ -64,5 +64,6 @@ public class Enemy : MonoBehaviour
         PlayerStats.money += reward;
         Destroy(gameObject);
         WaveSpawner.enemiesAlive--;
+        PlayerStats.enemiesKilled++;
     }
 }

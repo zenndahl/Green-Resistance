@@ -9,11 +9,13 @@ public class PlayerStats : MonoBehaviour{
     public int startMoney = 200;
     public int startLives = 5;
     public static int rounds;
+    public static int enemiesKilled;
 
     // Start is called before the first frame update
     void Start(){
         money = startMoney;
         lives = startLives;
         rounds = 0;
+        enemiesKilled = 0;
     }
 }

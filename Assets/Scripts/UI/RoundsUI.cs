@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class LifesUI : MonoBehaviour
+public class RoundsUI : MonoBehaviour
 {
-    public Text livesText;
+    public Text roundsText;
     
     void Update(){
-        livesText.text = PlayerStats.lives.ToString();
+        roundsText.text = PlayerStats.rounds.ToString();
     }
 }
