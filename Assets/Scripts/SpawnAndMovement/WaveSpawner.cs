@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
     public float betweenTime = 7f;
     public Transform spawnPoint;
     public Text waveCountdownTimer;
+    public GameObject endLevel;
 
     private float countdown = 10f;
     private int waveIndex = 0;
@@ -45,13 +46,10 @@ public class WaveSpawner : MonoBehaviour
 
 
     IEnumerator spawnWave(){
-
-        //PlayerStats.rounds++;
-
         Wave wave = waves[waveIndex];
         if(wave == null){
+            endLevel.SetActive(true);
             yield return 0;
-            //exibir tela de fim de fase
         }
 
         for (int i = 0; i < wave.count; i++){
