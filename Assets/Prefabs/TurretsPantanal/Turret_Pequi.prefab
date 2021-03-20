@@ -111,7 +111,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   node: {fileID: 0}
-  bulletPrefab: {fileID: 1756862993770166412, guid: fc07549b0259c88479a3af010c8cf921, type: 3}
+  bulletPrefab: {fileID: 1756862993770166412, guid: 8c2281a15bc118843af797e0b57ba6ab, type: 3}
 --- !u!61 &8192436490425483113
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -7,9 +7,14 @@ public class BuildManager : MonoBehaviour
     //singleton pattern
     public static BuildManager instance;
 
+    //turretUI settings
+    private TurretUI TUI;
+    public GameObject turretUI;
+
     //there will be only one instance of the build manager
     private void Awake() {
         instance = this;
+        TUI = turretUI.GetComponent<TurretUI>();
     }
 
     private TurretBlueprint turretToBuild;
@@ -25,18 +30,19 @@ public class BuildManager : MonoBehaviour
         selectedNode = node;
         turretToBuild = null;
 
-        //turretUI.SetTarget(selectedNode);
+        TUI.SetTurretUI(selectedNode);
+        turretUI.SetActive(true);
     }
 
     public void SelectTurretToBuild(TurretBlueprint turret){
         turretToBuild = turret;
         selectedNode = null;
-        //turretUI.Hide();
+        turretUI.SetActive(false);
     }
 
     public void DeselectNode(){
         selectedNode = null;
-        //turretUI.Hide();
+        turretUI.SetActive(false);
     }
 
     public TurretBlueprint GetTurretToBuild(){

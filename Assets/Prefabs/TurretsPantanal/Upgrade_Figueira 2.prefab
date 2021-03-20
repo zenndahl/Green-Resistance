@@ -106,11 +106,12 @@ MonoBehaviour:
   inDOT: 0
   isAttacking: 0
   isBuffed: 0
+  isRanged: 0
   firePoint: {fileID: 1824153697004183994}
   target: {fileID: 0}
   enemyTag: Enemy
   node: {fileID: 0}
-  bulletPrefab: {fileID: 1756862993770166412, guid: 41a1575cb3ab5c246b25cd2b1795cff4, type: 3}
+  bulletPrefab: {fileID: 1756862993770166412, guid: f5c3eff8dfd22e04e86926c9dbf9483c, type: 3}
 --- !u!61 &-3666324928226824711
 BoxCollider2D:
   m_ObjectHideFlags: 0

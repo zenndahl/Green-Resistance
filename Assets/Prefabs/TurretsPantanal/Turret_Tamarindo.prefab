@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7985164031610571828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.998, y: 8.243, z: 1}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   node: {fileID: 0}
-  bulletPrefab: {fileID: 1756862993770166412, guid: fc07549b0259c88479a3af010c8cf921, type: 3}
+  bulletPrefab: {fileID: 1756862993770166412, guid: 1666a3ac1dda1dc44aa4399b68092eb8, type: 3}
 --- !u!61 &-4962639600470936673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

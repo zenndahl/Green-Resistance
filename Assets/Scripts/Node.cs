@@ -131,7 +131,7 @@ public class Node : MonoBehaviour
     }
 
     //called when the upgrade button on the UI is pressed
-    public void UpgradeTurret(){
+    public void UpgradeTurret(TurretBlueprint bp){
 
         //if not enough money, dont do the upgrade
         if(PlayerStats.money < turretBlueprint.upgradeCost){
@@ -149,8 +149,19 @@ public class Node : MonoBehaviour
         turret = _turret;
         //here, the blueprint is the same, so there is no need for a new attribution
 
+        //makes the turret a child of the node, so it can move with it in special cases
+        turret.transform.parent = this.transform;
+
+        //if the turret is buffed by a node or support plant
+        if(hasBuff){
+            Buff();
+        }
+
+        //attributes the node to the turret
+        turret.GetComponent<Turret>().node = this;
+
         //there is a limit of 2 upgrades for the upgradable turrets, so this keeps track of it
-        isUpgraded++;
+        turretBlueprint.wichUpgrade++;
 
         // GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         // Destroy(effect, 5f);

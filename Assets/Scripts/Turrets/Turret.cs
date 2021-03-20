@@ -55,6 +55,10 @@ public class Turret : MonoBehaviour{
         inRange = false;
     }
 
+    private void OnMouseDown() {
+        node.buildManager.SelectNode(node);
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {          

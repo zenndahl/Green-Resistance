@@ -5,19 +5,20 @@ using UnityEngine.UI;
 
 public class TurretUI : MonoBehaviour
 {
-    private  Node target;
-    public GameObject ui;
-
+    private static Node target;
+    private BuildManager buildManager;
     public Text upgradeCost;
     public Button upgradeButton;
-
     public Text sellAmount;
 
-    
+    private void Start() {
+        buildManager = BuildManager.instance;
+    }
 
-    public void SetTurretUI(Node target){
+    public void SetTurretUI(Node _target){
+        target = _target;
         if(target.turretBlueprint.wichUpgrade < 2){
-            upgradeCost.text = "R$" + target.turretBlueprint.upgradeCost;
+            upgradeCost.text = "R$" + target.turretBlueprint.upgradeCost.ToString();
             upgradeButton.interactable = true;
         }
         else{ 
@@ -25,26 +26,17 @@ public class TurretUI : MonoBehaviour
             upgradeButton.interactable = false;
         }
 
-        sellAmount.text = "R$" + target.turretBlueprint.GetSellAmount();
-        ui.SetActive(true);
-    }
-
-    public void Show(){
-        ui.SetActive(true);
-    }
-
-    public void Hide(){
-        ui.SetActive(false);
+        sellAmount.text = "R$" + target.turretBlueprint.GetSellAmount().ToString();
     }
 
     public void Upgrade(){
-        target.UpgradeTurret();
-        BuildManager.instance.DeselectNode();
+        target.UpgradeTurret(target.turretBlueprint);
+        buildManager.DeselectNode();
         //not using the function Hide because the node would still be selected
     }
 
     public void Sell(){
         target.SellTurret();
-        BuildManager.instance.DeselectNode();
+        buildManager.DeselectNode();
     }
 }

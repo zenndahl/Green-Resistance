@@ -105,12 +105,14 @@ MonoBehaviour:
   turret: {fileID: 0}
   build: 1
   turretBlueprint:
+    hasUpgrade: 0
+    wichUpgrade: 0
     prefab: {fileID: 0}
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
+    upgrade2Prefab: {fileID: 0}
+    upgrade2Cost: 0
   isUpgraded: 0
 --- !u!60 &403688867428046796
 PolygonCollider2D:
