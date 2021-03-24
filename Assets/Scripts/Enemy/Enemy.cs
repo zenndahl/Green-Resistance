@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);   
 
         //if it reaches the waypoint, get the next
-        if(Vector2.Distance(transform.position, direction.position) <= 0.01f){
+        if(Vector2.Distance(transform.position, direction.position) <= 0.05f){
             GetNextWaypoint();
         }
     }

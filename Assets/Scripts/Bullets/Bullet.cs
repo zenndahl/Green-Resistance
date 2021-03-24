@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour
     public Vector3 hitPoint;
     
     public void Seek(Transform _target){
+        if(_target == null) return;
         target = _target;
         hitPoint = target.position;
     }

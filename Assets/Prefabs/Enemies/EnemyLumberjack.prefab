@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -759061163
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 42f67ae0001b0404983a0c319eeeddef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,8 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0927cc94f9f3bc5479d79f7941c4f068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wavepointIndex: 0
   initSpeed: 1
   initHealth: 150
+  reward: 0
+  inDOT: 0
   speed: 1
   health: 0
 --- !u!114 &-5732891298068196395
@@ -113,14 +116,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf82bfa548dc8c49b6c51dd18f1082a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  enemyTag: Turret
   range: 1
   fireRate: 1
   health: 0
+  atkDamage: 0
   shootCooldown: 0
   inRange: 0
+  inDOT: 0
+  isAttacking: 0
+  isBuffed: 0
+  isRanged: 0
   firePoint: {fileID: 4923902936365753600}
+  target: {fileID: 0}
+  enemyTag: Turret
+  node: {fileID: 0}
   bulletPrefab: {fileID: 1756862993770166412, guid: b5bd386179430924a85c77082f2fd451, type: 3}
 --- !u!61 &-4697724385234620999
 BoxCollider2D:

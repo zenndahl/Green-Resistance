@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Wave[] waves;
+    public Wave wave;
     public static int enemiesAlive = 0;
     public float betweenTime = 7f;
     public Transform spawnPoint;
@@ -14,7 +14,6 @@ public class WaveSpawner : MonoBehaviour
 
     private float countdown = 10f;
     private int waveIndex = 0;
-    private bool moreEnemies = false;
 
     private void Update() {
 
@@ -44,24 +43,24 @@ public class WaveSpawner : MonoBehaviour
         //fazer a contagem desaparecer enquanto tiver inimigos na tela
     }
 
-
     IEnumerator spawnWave(){
-        Wave wave = waves[waveIndex];
         if(wave == null){
             endLevel.SetActive(true);
             yield return 0;
         }
-
-        for (int i = 0; i < wave.count; i++){
-            //each even index, different enemy spawns
-            if(moreEnemies){
-                spawnEnemy(wave.enemy[(i % 2)]);
+        int index = 0; //to access the index of the enemies vector 
+        foreach(int enemyQuantity in wave.count){ //for each enemy, it gets its quantity to spawn
+            if(enemyQuantity != 0){
+                for (int i = 0; i < enemyQuantity; i++){
+                    spawnEnemy(wave.enemies[index]);
+                    yield return new WaitForSeconds(1f / wave.rate);
+                }
             }
-            else{
-                spawnEnemy(wave.enemy[(0)]);
-            }
-            yield return new WaitForSeconds(1f / wave.rate);
+            index++;
         }
+
+        if(waveIndex % 2 == 0 && wave.indexOfIncrement <= 5) wave.AddEnemyType();
+        if(waveIndex % 2 != 0) wave.Increment();
 
         waveIndex++;
         PlayerStats.rounds = waveIndex;

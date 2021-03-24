@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -759061163
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 09edd6b19628f9c4ba883d4010ed4455, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -144,10 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd258e162366554ebe4462aa7c5e3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wavepointIndex: 0
   initSpeed: 1
   initHealth: 100
+  reward: 0
+  inDOT: 0
   speed: 0
   health: 0
   beastCounter: 3
   beastPrefab: {fileID: 8843479040144330184, guid: e0f45cf6b22a8d84a8cc72cfdacd9009, type: 3}
   spawnDelay: 3
+  rate: 0.3
