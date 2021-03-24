@@ -111,7 +111,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   node: {fileID: 0}
-  bulletPrefab: {fileID: 1756862993770166412, guid: f5c3eff8dfd22e04e86926c9dbf9483c, type: 3}
+  bulletPrefab: {fileID: 1756862993770166412, guid: bb4282d75de3f3c4f9ce8ff455bca385, type: 3}
 --- !u!61 &-8201171530143446667
 BoxCollider2D:
   m_ObjectHideFlags: 0
