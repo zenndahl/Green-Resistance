@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static bool gameIsOver;
     public GameObject gameOverUI;
     public GameObject shopUI;
+    public GameObject gameInfosUI;
     //public PauseMenu pauseMenuUI;
     
     // Start is called before the first frame update
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
         gameIsOver = true;
         gameOverUI.SetActive(true);
         shopUI.SetActive(false);
+        gameInfosUI.SetActive(false);
         Debug.Log("Game Over");
     }
 }
