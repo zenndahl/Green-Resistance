@@ -23,9 +23,6 @@ public class Node : MonoBehaviour
     [HideInInspector]
     public TurretBlueprint turretBlueprint;
 
-    [HideInInspector]
-    public int isUpgraded = 0;
-
     protected SpriteRenderer rend;
 
     private void Start() {
@@ -131,7 +128,7 @@ public class Node : MonoBehaviour
     }
 
     //called when the upgrade button on the UI is pressed
-    public void UpgradeTurret(TurretBlueprint bp){
+    public void UpgradeTurret(){
 
         //if not enough money, dont do the upgrade
         if(PlayerStats.money < turretBlueprint.upgradeCost){
@@ -145,7 +142,7 @@ public class Node : MonoBehaviour
         Destroy(turret);
 
         //building the upgraded turret
-        GameObject _turret = (GameObject)Instantiate(turretBlueprint.GetPrefab(), GetBuildPosition(), Quaternion.identity);
+        GameObject _turret = (GameObject)Instantiate(turretBlueprint.GetPrefab(turret), GetBuildPosition(), Quaternion.identity);
         turret = _turret;
         //here, the blueprint is the same, so there is no need for a new attribution
 
@@ -161,7 +158,7 @@ public class Node : MonoBehaviour
         turret.GetComponent<Turret>().node = this;
 
         //there is a limit of 2 upgrades for the upgradable turrets, so this keeps track of it
-        turretBlueprint.wichUpgrade++;
+        turret.GetComponent<Turret>().wichUpgrade++;
 
         // GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         // Destroy(effect, 5f);
@@ -169,10 +166,9 @@ public class Node : MonoBehaviour
 
     //remove the turret from the node and get some money back
     public void SellTurret(){
-        PlayerStats.money += turretBlueprint.GetSellAmount();
+        PlayerStats.money += turretBlueprint.GetSellAmount(turret);
         Destroy(turret);
         turretBlueprint = null;
-        isUpgraded = 0;
     }
 
     //returns the position to build the turrets, that is the pivot + the offset
