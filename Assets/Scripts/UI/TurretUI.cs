@@ -17,7 +17,7 @@ public class TurretUI : MonoBehaviour
 
     public void SetTurretUI(Node _target){
         target = _target;
-        if(target.turretBlueprint.wichUpgrade < 2){
+        if(target.turret.GetComponent<Turret>().wichUpgrade < 2){
             upgradeCost.text = "R$" + target.turretBlueprint.upgradeCost.ToString();
             upgradeButton.interactable = true;
         }
@@ -26,11 +26,11 @@ public class TurretUI : MonoBehaviour
             upgradeButton.interactable = false;
         }
 
-        sellAmount.text = "R$" + target.turretBlueprint.GetSellAmount().ToString();
+        sellAmount.text = "R$" + target.turretBlueprint.GetSellAmount(target.turret).ToString();
     }
 
     public void Upgrade(){
-        target.UpgradeTurret(target.turretBlueprint);
+        target.UpgradeTurret();
         buildManager.DeselectNode();
         //not using the function Hide because the node would still be selected
     }

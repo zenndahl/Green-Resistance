@@ -24,8 +24,8 @@ public class Wave : MonoBehaviour{
     public void AddEnemyType(){
         count[indexOfIncrement] = initialCount;
         Debug.Log(indexOfIncrement);
+        if(indexOfIncrement >= 4) return;
         indexOfIncrement++;
-        Debug.Log(indexOfIncrement);
     }
 
     //increases the number of enemies of the spawning types on each odd index of the wave
@@ -34,6 +34,13 @@ public class Wave : MonoBehaviour{
             if(count[i] != 0){
                 count[i] += modifier;
             }
+        }
+    }
+
+    //ads the boss to the wave spawner
+    public void CallBoss(){
+        for(int i = 0; i < 5; i++){
+            count[4] = initialCount;
         }
     }
 }

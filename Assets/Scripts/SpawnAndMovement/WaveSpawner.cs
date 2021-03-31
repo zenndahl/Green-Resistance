@@ -61,6 +61,7 @@ public class WaveSpawner : MonoBehaviour
 
         if(waveIndex % 2 == 0 && wave.indexOfIncrement <= 5) wave.AddEnemyType();
         if(waveIndex % 2 != 0) wave.Increment();
+        if(waveIndex % 5 == 0 && waveIndex >= 15) wave.CallBoss();
 
         waveIndex++;
         PlayerStats.rounds = waveIndex;
