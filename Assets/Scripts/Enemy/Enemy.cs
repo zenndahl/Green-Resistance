@@ -38,6 +38,13 @@ public class Enemy : MonoBehaviour
         if(Vector2.Distance(transform.position, direction.position) <= 0.05f){
             GetNextWaypoint();
         }
+
+        if(direction.position.x > transform.position.x){
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if(direction.position.x < transform.position.x){
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     protected void GetNextWaypoint(){
