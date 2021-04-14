@@ -11,6 +11,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPoint;
     public Text waveCountdownTimer;
     public GameObject endLevel;
+    public int waveCount = 100;
 
     private float countdown = 10f;
     private int waveIndex = 0;
@@ -44,9 +45,11 @@ public class WaveSpawner : MonoBehaviour
     }
 
     IEnumerator spawnWave(){
-        if(wave == null){
-            endLevel.SetActive(true);
-            yield return 0;
+        if(!GameManager.zenMode){
+            if(waveIndex == waveCount){
+                endLevel.SetActive(true);
+                yield return 0;
+            }
         }
         int index = 0; //to access the index of the enemies vector 
         foreach(int enemyQuantity in wave.count){ //for each enemy, it gets its quantity to spawn

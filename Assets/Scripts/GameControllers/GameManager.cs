@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject shopUI;
     public GameObject gameInfosUI;
+    public static bool zenMode = false;
     //public PauseMenu pauseMenuUI;
     
     // Start is called before the first frame update

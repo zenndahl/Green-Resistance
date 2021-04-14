@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
         hitPoint = target.position;
     }
 
-    private void Start() {
+    private void Start(){
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
