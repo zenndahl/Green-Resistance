@@ -14,12 +14,16 @@ public class TurretBlueprint {
     public int upgradeCost;
 
     public GameObject upgrade2Prefab;
-    public int upgrade2Cost;
+
+    public bool upgradeDamage;
+    public bool upgradeFireRate;
+    public bool upgradeRange;
 
     private Turret turret;
 
     public GameObject GetPrefab(GameObject _turret = null){
         if(turret != null) turret = _turret.GetComponent<Turret>();
+        if(!hasUpgrade) return null;
 
         if(_turret == null){
             return prefab;
@@ -33,18 +37,16 @@ public class TurretBlueprint {
         return null;
     }
 
-    public int GetSellAmount(GameObject _turret){
-        turret = _turret.GetComponent<Turret>();
-
+    public int GetSellAmount(Turret _turret){
         if(turret.wichUpgrade == 0){
             return cost/2;
         }
-        else if(turret.wichUpgrade == 1){
+        else{
             return upgradeCost/2;
         }
-        else if(turret.wichUpgrade == 2){
-            return upgrade2Cost/2;
-        }
-        return 0;
+    }
+
+    public void SetUpgradeCost(){
+        upgradeCost *= 2;
     }
 }

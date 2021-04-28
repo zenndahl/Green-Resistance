@@ -5,6 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour{
 
     [Header("Turret Stats")]
+    public string turretName;
     public float range;
     public float fireRate;
     public float health;
@@ -83,6 +84,10 @@ public class Turret : MonoBehaviour{
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
+    // public void Upgrades(Text text){
+    //     text.text = 
+    // }
 
     public virtual void Attack(){
         return;

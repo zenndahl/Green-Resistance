@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -43,5 +44,18 @@ public class GameManager : MonoBehaviour
         shopUI.SetActive(false);
         gameInfosUI.SetActive(false);
         Debug.Log("Game Over");
+    }
+
+    public static void Retry(){
+        //reload the current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public static void Menu(){
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public static void Quit(){
+        Application.Quit();
     }
 }
