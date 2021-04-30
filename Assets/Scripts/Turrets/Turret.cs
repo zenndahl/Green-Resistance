@@ -12,6 +12,7 @@ public class Turret : MonoBehaviour{
     public float atkDamage;
     public float shootCooldown = 0.5f;
 
+    
     [Header("Conditional Status")]
     public bool inRange;
     public bool inDOT;

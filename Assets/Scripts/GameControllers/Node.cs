@@ -140,9 +140,16 @@ public class Node : MonoBehaviour
 
         //destroy the old turret
         Destroy(turret);
+        GameObject _turret;
 
-        //building the upgraded turret
-        GameObject _turret = (GameObject)Instantiate(turretBlueprint.GetPrefab(turret), GetBuildPosition(), Quaternion.identity);
+        if(turret.GetComponent<Turret>().wichUpgrade == 0){
+            //building the upgraded turret
+            _turret = (GameObject)Instantiate(turretBlueprint.upgrade1Prefab, GetBuildPosition(), Quaternion.identity);
+        }
+        else{
+            _turret = (GameObject)Instantiate(turretBlueprint.upgrade2Prefab, GetBuildPosition(), Quaternion.identity);
+        }
+
         turretBlueprint.SetUpgradeCost();
         turret = _turret;
         //here, the blueprint is the same, so there is no need for a new attribution
@@ -167,7 +174,7 @@ public class Node : MonoBehaviour
 
     //remove the turret from the node and get some money back
     public void SellTurret(){
-        PlayerStats.money += turretBlueprint.GetSellAmount(turret.GetComponent<Turret>());
+        PlayerStats.money += turretBlueprint.sellPrice;
         Destroy(turret);
         turretBlueprint = null;
     }

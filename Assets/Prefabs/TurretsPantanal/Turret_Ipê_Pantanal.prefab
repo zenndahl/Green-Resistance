@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2173a59adb76042a6db31d23e7524e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretName: "Ip\xEA Roxo"
   range: 0.7
   fireRate: 0.5
   health: 50
@@ -106,6 +107,8 @@ MonoBehaviour:
   inDOT: 0
   isAttacking: 0
   isBuffed: 0
+  isRanged: 0
+  wichUpgrade: 0
   firePoint: {fileID: 1824153697004183994}
   target: {fileID: 0}
   enemyTag: Enemy

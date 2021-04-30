@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf82bfa548dc8c49b6c51dd18f1082a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretName: Tamarindo
   range: 1
   fireRate: 1
   health: 50
@@ -107,6 +108,7 @@ MonoBehaviour:
   isAttacking: 0
   isBuffed: 0
   isRanged: 0
+  wichUpgrade: 0
   firePoint: {fileID: 1824153697004183994}
   target: {fileID: 0}
   enemyTag: Enemy

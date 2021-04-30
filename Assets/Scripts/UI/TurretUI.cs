@@ -26,6 +26,20 @@ public class TurretUI : MonoBehaviour
     public void SetTurretUI(Node _target){
         target = _target;
         Turret turret = target.turret.GetComponent<Turret>();
+
+        //TurretStats from the present tower
+        name_2.text = turret.turretName;
+        damageUI.text = "Damage: " + turret.atkDamage.ToString();
+        fireRateUI.text = "Fire Rate: " + turret.fireRate.ToString();
+        rangeUI.text = "Range: " + turret.range.ToString();
+
+        sellAmount.text = target.turretBlueprint.sellPrice.ToString();
+
+        if(!target.turretBlueprint.hasUpgrade){
+            upgradeCost.text = "No Máximo!";
+            return;
+        }
+
         if(target.turret.GetComponent<Turret>().wichUpgrade < 2){
             upgradeCost.text = "R$" + target.turretBlueprint.upgradeCost.ToString();
             upgradeButton.interactable = true;
@@ -34,26 +48,30 @@ public class TurretUI : MonoBehaviour
             upgradeCost.text = "No Máximo!";
             upgradeButton.interactable = false;
         }
-
-        //TurretStats from the present tower
-        name_2.text = turret.turretName;
-        damageUI.text = "Damage: " + turret.atkDamage.ToString();
-        fireRateUI.text = "Fire Rate: " + turret.fireRate.ToString();
-        rangeUI.text = "Range: " + turret.range.ToString();
-
         //TurretUpgradeStats from the upgrade prefab
         name_1.text = turret.turretName;
-        if(target.turretBlueprint.upgradeDamage){
-            upgradeDamageUI.SetActive(true);
+        if(target.turret.GetComponent<Turret>().wichUpgrade == 0){
+            if(target.turretBlueprint.upgrades_1[0]){
+                upgradeDamageUI.SetActive(true);
+            }
+            if(target.turretBlueprint.upgrades_1[1]){
+                upgradeFireRateUI.SetActive(true);
+            }
+            if(target.turretBlueprint.upgrades_1[2]){
+                upgradeRangeUI.SetActive(true);
+            }
         }
-        if(target.turretBlueprint.upgradeFireRate){
-            upgradeFireRateUI.SetActive(true);
+        else if(target.turret.GetComponent<Turret>().wichUpgrade == 1){
+            if(target.turretBlueprint.upgrades_2[0]){
+                upgradeDamageUI.SetActive(true);
+            }
+            if(target.turretBlueprint.upgrades_2[1]){
+                upgradeFireRateUI.SetActive(true);
+            }
+            if(target.turretBlueprint.upgrades_2[2]){
+                upgradeRangeUI.SetActive(true);
+            }
         }
-        if(target.turretBlueprint.upgradeRange){
-            upgradeRangeUI.SetActive(true);
-        }
-
-        //sellAmount.text = "R$" + target.turretBlueprint.GetSellAmount(turret).ToString();
     }
 
     public void Upgrade(){
