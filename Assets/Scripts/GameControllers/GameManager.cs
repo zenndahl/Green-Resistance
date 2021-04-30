@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject shopUI;
     public GameObject gameInfosUI;
+    public GameObject pauseUI;
+
+    private bool isPaused = false;
     public static bool zenMode = false;
     //public PauseMenu pauseMenuUI;
     
@@ -27,6 +30,19 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown("e")){
             EndGame();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(isPaused){ 
+                isPaused = false;
+                Debug.Log("Despausar");
+                Resume();
+            }
+            else if(!isPaused){
+                isPaused = true;
+                Debug.Log("Pausar");
+                Pause();
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -57,5 +73,17 @@ public class GameManager : MonoBehaviour
 
     public static void Quit(){
         Application.Quit();
+    }
+
+    public void Pause(){
+        pauseUI.SetActive(true);
+        shopUI.SetActive(false);
+        Time.timeScale = 0;
+    }
+
+    public void Resume(){
+        pauseUI.SetActive(false);
+        shopUI.SetActive(true);
+        Time.timeScale = 1;
     }
 }
