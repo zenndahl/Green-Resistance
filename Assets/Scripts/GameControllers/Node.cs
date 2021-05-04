@@ -18,6 +18,7 @@ public class Node : MonoBehaviour
 
     [HideInInspector]
     public GameObject turret;
+    [HideInInspector]
     public bool build = true;
 
     [HideInInspector]

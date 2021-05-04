@@ -96,7 +96,6 @@ public class Turret : MonoBehaviour{
 
     public void TakeDamage(float damage){
         health -= damage;
-        Debug.Log("DamageDealt: " + damage);
         if(health <= 0){
             Destroy(gameObject);
         }

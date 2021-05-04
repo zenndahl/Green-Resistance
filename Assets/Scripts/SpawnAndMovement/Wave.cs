@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class Wave : MonoBehaviour{
     public Transform[] enemies;//vector of enemies that will be in the level
     public int initialCount; //initial quantity of enemies in the wave

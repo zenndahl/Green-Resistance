@@ -167,7 +167,7 @@ public class Shop : MonoBehaviour
 
     //call the BuildManager to assign the Figo turret type
     public void SelectFigo(){
-        Debug.Log("Figo Tree-Turret Selected");
+        //Debug.Log("Figo Tree-Turret Selected");
         buildManager.SelectTurretToBuild(figoTurret);
     }
 

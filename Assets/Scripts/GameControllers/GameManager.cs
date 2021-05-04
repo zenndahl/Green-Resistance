@@ -45,10 +45,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            //pauseMenuUI.PauseGame();
-        }
-
         if(PlayerStats.lives <= 0){
             EndGame();
         }
