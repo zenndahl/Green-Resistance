@@ -1955,6 +1955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldText: {fileID: 660354745}
   enemiesText: {fileID: 1142576186}
+  shopUI: {fileID: 1310520486}
+  infosUI: {fileID: 1737551497}
 --- !u!95 &187660089
 Animator:
   serializedVersion: 3
@@ -5247,7 +5249,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 50
   m_ChildAlignment: 7
-  m_Spacing: -100
+  m_Spacing: -200
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -12246,7 +12248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 633.33325, y: -369.99997}
+  m_AnchoredPosition: {x: 599.99994, y: -369.99997}
   m_SizeDelta: {x: 125, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270045893
@@ -13308,17 +13310,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331273743}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2358d619dbbaa544192874a6983fa44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wave: {fileID: 1331273748}
+  initialCountdownTime: 10
   betweenTime: 7
   spawnPoint: {fileID: 1721730757}
   waveCountdownTimer: {fileID: 728357897}
   endLevel: {fileID: 187660086}
-  waveCount: 100
+  waveCount: 50
 --- !u!4 &1331273747
 Transform:
   m_ObjectHideFlags: 0
@@ -21572,7 +21575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 166.66666, y: -369.99997}
+  m_AnchoredPosition: {x: 199.99998, y: -369.99997}
   m_SizeDelta: {x: 125, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936276395

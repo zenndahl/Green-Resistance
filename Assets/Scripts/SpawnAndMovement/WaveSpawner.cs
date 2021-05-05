@@ -16,12 +16,22 @@ public class WaveSpawner : MonoBehaviour
 
     private float countdown = 10f;
     private int waveIndex = 0;
+    private bool levelEnded = false;
 
     private void Start() {
         betweenTime = initialCountdownTime;
     }
 
     private void Update() {
+
+        //if the game is in normal mode, the game ends when the waves reach the total count of the level
+        if(!GameManager.zenMode && enemiesAlive == 0){
+            if(waveIndex == waveCount){
+                endLevel.SetActive(true);
+                levelEnded = true;
+                return;
+            }
+        }
 
         //if there is at leat one enemy alive, the next countdown will not begin
         if(enemiesAlive > 0){
@@ -50,22 +60,20 @@ public class WaveSpawner : MonoBehaviour
     }
 
     IEnumerator spawnWave(){
-        //if the game is in normal mode, the game ends when the waves reach the total count of the level
-        if(!GameManager.zenMode){
-            if(waveIndex == waveCount){
-                endLevel.SetActive(true);
-                yield return 0;
-            }
+        if(levelEnded){
+            yield return 0;
         }
-        int index = 0; //to access the index of the enemies vector 
-        foreach(int enemyQuantity in wave.count){ //for each enemy, it gets its quantity to spawn
-            if(enemyQuantity != 0){
-                for (int i = 0; i < enemyQuantity; i++){
-                    spawnEnemy(wave.enemies[index]);
-                    yield return new WaitForSeconds(1f / wave.rate);
+        else{
+            int index = 0; //to access the index of the enemies vector 
+            foreach(int enemyQuantity in wave.count){ //for each enemy, it gets its quantity to spawn
+                if(enemyQuantity != 0){
+                    for (int i = 0; i < enemyQuantity; i++){
+                        spawnEnemy(wave.enemies[index]);
+                        yield return new WaitForSeconds(1f / wave.rate);
+                    }
                 }
+                index++;
             }
-            index++;
         }
 
         //for each even wave, a new enemy type will spawn, if it has not spawned yet

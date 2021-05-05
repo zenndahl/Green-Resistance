@@ -101,7 +101,7 @@ MonoBehaviour:
   range: 1
   fireRate: 1
   health: 50
-  atkDamage: 25
+  atkDamage: 50
   shootCooldown: 0.5
   inRange: 0
   inDOT: 0

@@ -9,9 +9,13 @@ public class EndLevel : MonoBehaviour
     //public Text roundsText;
     public Text goldText;
     public Text enemiesText;
+    public GameObject shopUI;
+    public GameObject infosUI;
 
     void OnEnable(){
         // roundsText.text = PlayerStats.rounds.ToString();
+        shopUI.SetActive(false);
+        infosUI.SetActive(false);
         goldText.text = PlayerStats.money.ToString();
         enemiesText.text = PlayerStats.enemiesKilled.ToString();
     }
