@@ -23,6 +23,7 @@ public class Turret : MonoBehaviour{
 
     [Header("Turret Setup")]
     public Transform firePoint;
+    public Vector3 posOffset;
 
     [Header("Enemy Setup")]
     public Transform target;
@@ -96,7 +97,6 @@ public class Turret : MonoBehaviour{
 
     public void TakeDamage(float damage){
         health -= damage;
-        Debug.Log("DamageDealt: " + damage);
         if(health <= 0){
             Destroy(gameObject);
         }

@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         gameIsOver = false;
+        
     }
 
     // Update is called once per frame
@@ -43,10 +45,6 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Pausar");
                 Pause();
             }
-        }
-
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            //pauseMenuUI.PauseGame();
         }
 
         if(PlayerStats.lives <= 0){

@@ -7,7 +7,7 @@ public class Node : MonoBehaviour
 {
     [Header("Setup")]
     public BuildManager buildManager;
-    public Vector3 posOffset;
+    //public Vector3 posOffset;
     public bool hasBuff = false;
 
     [Header("Node Highlights")]
@@ -18,6 +18,7 @@ public class Node : MonoBehaviour
 
     [HideInInspector]
     public GameObject turret;
+    [HideInInspector]
     public bool build = true;
 
     [HideInInspector]
@@ -97,7 +98,7 @@ public class Node : MonoBehaviour
         PlayerStats.money -= blueprint.cost;
 
         //instantiate the turret and set the node references for the turret and the blueprint used
-        GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(blueprint.prefab), Quaternion.identity);
         turret = _turret;
         turretBlueprint = blueprint;
 
@@ -112,12 +113,12 @@ public class Node : MonoBehaviour
         //attributes the node to the turret
         turret.GetComponent<Turret>().node = this;
 
-        //GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        //GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(blueprint.prefab), Quaternion.identity);
         //Destroy(effect, 5f);
     }
 
     public void BuildBuilding(GameObject building){
-        GameObject _building = (GameObject)Instantiate(building, GetBuildPosition(), Quaternion.identity);
+        GameObject _building = (GameObject)Instantiate(building, GetBuildPosition(building), Quaternion.identity);
         turret = _building;
         //animation for the building spawn
     }
@@ -144,10 +145,10 @@ public class Node : MonoBehaviour
 
         if(turret.GetComponent<Turret>().wichUpgrade == 0){
             //building the upgraded turret
-            _turret = (GameObject)Instantiate(turretBlueprint.upgrade1Prefab, GetBuildPosition(), Quaternion.identity);
+            _turret = (GameObject)Instantiate(turretBlueprint.upgrade1Prefab, GetBuildPosition(turretBlueprint.upgrade1Prefab), Quaternion.identity);
         }
         else{
-            _turret = (GameObject)Instantiate(turretBlueprint.upgrade2Prefab, GetBuildPosition(), Quaternion.identity);
+            _turret = (GameObject)Instantiate(turretBlueprint.upgrade2Prefab, GetBuildPosition(turretBlueprint.upgrade2Prefab), Quaternion.identity);
         }
 
         turretBlueprint.SetUpgradeCost();
@@ -180,7 +181,7 @@ public class Node : MonoBehaviour
     }
 
     //returns the position to build the turrets, that is the pivot + the offset
-    public Vector3 GetBuildPosition(){
-        return transform.position + posOffset;
+    public Vector3 GetBuildPosition(GameObject _turret){
+        return transform.position + _turret.GetComponent<Turret>().posOffset;
     }
 }
