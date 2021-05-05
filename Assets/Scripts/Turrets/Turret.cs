@@ -23,6 +23,7 @@ public class Turret : MonoBehaviour{
 
     [Header("Turret Setup")]
     public Transform firePoint;
+    public Vector3 posOffset;
 
     [Header("Enemy Setup")]
     public Transform target;

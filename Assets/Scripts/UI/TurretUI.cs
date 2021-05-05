@@ -37,6 +37,7 @@ public class TurretUI : MonoBehaviour
 
         if(!target.turretBlueprint.hasUpgrade){
             upgradeCost.text = "No Máximo!";
+            upgradeButton.interactable = false;
             return;
         }
 

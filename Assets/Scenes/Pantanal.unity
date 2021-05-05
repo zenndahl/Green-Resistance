@@ -5487,6 +5487,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1111735208}
     - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: posOffset.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: startSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3724665b47b179048aeabfae36e5a3df, type: 3}
@@ -5561,6 +5565,10 @@ PrefabInstance:
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_Name
       value: VitoriaRegia (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_TagString
@@ -9007,6 +9015,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1241060574}
     - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: posOffset.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: startSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3724665b47b179048aeabfae36e5a3df, type: 3}
@@ -9081,6 +9093,10 @@ PrefabInstance:
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_Name
       value: VitoriaRegia
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_TagString
@@ -11369,6 +11385,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1241060574}
     - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: posOffset.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: startSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3724665b47b179048aeabfae36e5a3df, type: 3}
@@ -11447,6 +11467,10 @@ PrefabInstance:
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_Name
       value: VitoriaRegia (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_TagString
@@ -12746,7 +12770,7 @@ MonoBehaviour:
   figoTurret:
     hasUpgrade: 1
     cost: 100
-    upgradeCost: 200
+    upgradeCost: 150
     prefab: {fileID: 7985164031610571828, guid: 4022de015840f47469bf8cbf8aa6ded2, type: 3}
     upgrade1Prefab: {fileID: 7985164031610571828, guid: 04191a647ef94b841a79e3bdff3dbd7b, type: 3}
     upgrade2Prefab: {fileID: 7985164031610571828, guid: 1e50ba5d8d7aece4297816354fdd0a38, type: 3}
@@ -12763,7 +12787,7 @@ MonoBehaviour:
     upgrades_2: 000100
   abacaxiTurret:
     hasUpgrade: 0
-    cost: 0
+    cost: 200
     upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: d2734956f99a5d943b5701f5d5857025, type: 3}
     upgrade1Prefab: {fileID: 0}
@@ -12772,7 +12796,7 @@ MonoBehaviour:
     upgrades_2: 000000
   pequiTurret:
     hasUpgrade: 0
-    cost: 0
+    cost: 250
     upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: ee2467f7e59a2f0439772341c6a2060d, type: 3}
     upgrade1Prefab: {fileID: 0}
@@ -12781,7 +12805,7 @@ MonoBehaviour:
     upgrades_2: 000000
   tamarindoTurret:
     hasUpgrade: 0
-    cost: 0
+    cost: 300
     upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: f3ecbd564e3f8ce42adfd15662a365b4, type: 3}
     upgrade1Prefab: {fileID: 0}
@@ -12931,6 +12955,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 118050309}
     - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: posOffset.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: startSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3724665b47b179048aeabfae36e5a3df, type: 3}
@@ -13005,6 +13033,10 @@ PrefabInstance:
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_Name
       value: VitoriaRegia (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_TagString
@@ -13276,7 +13308,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331273743}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2358d619dbbaa544192874a6983fa44f, type: 3}
   m_Name: 
@@ -16034,6 +16066,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 118050309}
     - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: posOffset.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: startSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3724665b47b179048aeabfae36e5a3df, type: 3}
@@ -16112,6 +16148,10 @@ PrefabInstance:
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_Name
       value: VitoriaRegia (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_TagString
@@ -21217,6 +21257,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1111735208}
     - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: posOffset.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2473239865641904316, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: startSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3724665b47b179048aeabfae36e5a3df, type: 3}
@@ -21295,6 +21339,10 @@ PrefabInstance:
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_Name
       value: VitoriaRegia (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7985164031610571828, guid: 724f65c7d810f624aad1746359bbe3bc, type: 3}
       propertyPath: m_TagString

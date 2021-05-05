@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -8140791947629368032}
   - component: {fileID: -3525809630513174680}
   - component: {fileID: -2473239865641904316}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: VitoriaRegia
-  m_TagString: Untagged
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1635520533
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 082b172489c4f734093b98b82c845300, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &-8140791947629368032
@@ -153,13 +153,14 @@ MonoBehaviour:
   turret: {fileID: 0}
   build: 1
   turretBlueprint:
-    prefab: {fileID: 0}
+    hasUpgrade: 0
     cost: 0
-    upgrade1_Prefab: {fileID: 0}
     upgradeCost: 0
-    upgrade2_Prefab: {fileID: 0}
-    upgrade2_Cost: 0
-  isUpgraded: 0
+    prefab: {fileID: 0}
+    upgrade1Prefab: {fileID: 0}
+    upgrade2Prefab: {fileID: 0}
+    upgrades_1: 000000
+    upgrades_2: 000000
   wavepointIndex: 0
   speed: 0.5
   floatPoints: {fileID: 0}
