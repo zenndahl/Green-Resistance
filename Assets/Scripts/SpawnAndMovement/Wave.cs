@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Wave : MonoBehaviour{
-    public Transform[] enemies;//vector of enemies that will be in the level
+    public GameObject[] enemies;//vector of enemies that will be in the level
     public int initialCount; //initial quantity of enemies in the wave
     public int modifier; //number of enemies increment
     public float rate; //frequency of enemies spawn

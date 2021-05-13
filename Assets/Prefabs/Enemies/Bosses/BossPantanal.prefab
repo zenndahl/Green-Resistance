@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5732891298068196395}
   - component: {fileID: -2941647336239093905}
   - component: {fileID: 5590380657124855319}
+  - component: {fileID: 7206617521510430070}
   m_Layer: 8
   m_Name: BossPantanal
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8843479040144330184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.522, y: 9.512, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf82bfa548dc8c49b6c51dd18f1082a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretName: 
   range: 0.7
   fireRate: 2
   health: 0
@@ -105,7 +107,11 @@ MonoBehaviour:
   inRange: 0
   inDOT: 0
   isAttacking: 0
+  isBuffed: 0
+  isRanged: 0
+  wichUpgrade: 0
   firePoint: {fileID: 4923902936365753600}
+  posOffset: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
   enemyTag: Turret
   node: {fileID: 0}
@@ -151,6 +157,26 @@ MonoBehaviour:
   wavepointIndex: 0
   initSpeed: 0.5
   initHealth: 300
+  reward: 0
   inDOT: 0
   speed: 0
   health: 0
+--- !u!95 &7206617521510430070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843479040144330184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b602268b8ff42e4fb9a90257f13db56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

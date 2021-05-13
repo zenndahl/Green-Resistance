@@ -13349,11 +13349,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4923902936365753600, guid: 53d8d9b3cadc63c459703859cc138dea, type: 3}
-  - {fileID: 4923902936365753600, guid: c501ee2dba7492c438599ccc27ac82de, type: 3}
-  - {fileID: 4923902936365753600, guid: 730e4825648212f49a1a609c67b6600e, type: 3}
-  - {fileID: 4923902936365753600, guid: 5b75d41de0184e3448d5746f388635a6, type: 3}
-  - {fileID: 4923902936365753600, guid: 39475b6aaa0a5f540bec7a76f1601280, type: 3}
+  - {fileID: 8843479040144330184, guid: 53d8d9b3cadc63c459703859cc138dea, type: 3}
+  - {fileID: 8843479040144330184, guid: c501ee2dba7492c438599ccc27ac82de, type: 3}
+  - {fileID: 8843479040144330184, guid: 730e4825648212f49a1a609c67b6600e, type: 3}
+  - {fileID: 8843479040144330184, guid: 5783c8bce0d2fac4bb2dae38071008be, type: 3}
+  - {fileID: 8843479040144330184, guid: 39475b6aaa0a5f540bec7a76f1601280, type: 3}
   initialCount: 5
   modifier: 5
   rate: 1

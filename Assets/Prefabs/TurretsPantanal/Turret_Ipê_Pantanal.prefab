@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretName: "Ip\xEA Roxo"
-  range: 0.7
+  range: 0.8
   fireRate: 0.5
   health: 50
   atkDamage: 50

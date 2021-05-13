@@ -6,9 +6,8 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public Wave wave;
-    public static int enemiesAlive = 0;
     public float initialCountdownTime = 10f;
-    public float betweenTime = 7f;
+    public float betweenTime = 30f;
     public Transform spawnPoint;
     public Text waveCountdownTimer;
     public GameObject endLevel;
@@ -17,6 +16,9 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 10f;
     private int waveIndex = 0;
     private bool levelEnded = false;
+    private int totalEnemies = 0;
+    public static int enemiesAlive = 0;
+    public int enemiesSpawned = 0;
 
     private void Start() {
         betweenTime = initialCountdownTime;
@@ -34,7 +36,7 @@ public class WaveSpawner : MonoBehaviour
         }
 
         //if there is at leat one enemy alive, the next countdown will not begin
-        if(enemiesAlive > 0){
+        if(enemiesSpawned < totalEnemies){
             waveCountdownTimer.enabled = false;
             return;
         }
@@ -66,6 +68,7 @@ public class WaveSpawner : MonoBehaviour
         else{
             int index = 0; //to access the index of the enemies vector 
             foreach(int enemyQuantity in wave.count){ //for each enemy, it gets its quantity to spawn
+                totalEnemies += enemyQuantity;
                 if(enemyQuantity != 0){
                     for (int i = 0; i < enemyQuantity; i++){
                         spawnEnemy(wave.enemies[index]);
@@ -81,15 +84,19 @@ public class WaveSpawner : MonoBehaviour
         //for each odds wave, the spawning enemy types will spawn more units
         if(waveIndex % 2 != 0) wave.Increment();
         //after the 15 wave, at every 5 waves, more bosses will spawn
-        if(waveIndex % 5 == 0 && waveIndex >= 15) wave.CallBoss();
+        //if(waveIndex % 5 == 0 && waveIndex >= 15) wave.CallBoss();
+        if(waveIndex % 5 == 0) countdown += 10;
 
         waveIndex++;
         PlayerStats.rounds = waveIndex;
     }
 
-    void spawnEnemy(Transform enemy){
+    void spawnEnemy(GameObject enemy){
         //instantiate an enemy and add it to the list of alive enemies
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemy.transform, spawnPoint.position, spawnPoint.rotation);
+        //each 5 waves, nemies stats will upgrade
+        //if(waveIndex % 5 == 0) spawned.GetComponent<Enemy>().Upgrade();
+        enemiesSpawned++;
         enemiesAlive++;
     }
 }

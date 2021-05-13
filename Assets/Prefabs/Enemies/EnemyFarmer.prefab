@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: -759061163
   m_SortingLayer: 6
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: ae383fcae84390c4db15bb080ccbb916, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0b0e3eccafb925428b36f299fb651c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.48, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,8 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavepointIndex: 0
   initSpeed: 1
-  initHealth: 100
-  reward: 0
+  initHealth: 50
+  upHealth: 50
+  reward: 25
+  animator: {fileID: 2989102767027431414}
   inDOT: 0
   speed: 0
   health: 0
@@ -143,8 +145,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.48, y: 0.48}
+    newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
