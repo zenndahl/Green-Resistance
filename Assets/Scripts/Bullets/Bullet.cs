@@ -6,7 +6,8 @@ public class Bullet : MonoBehaviour
 {
     [Header("Setup")]
     protected Transform target;
-    private Rigidbody2D rigidBody;
+    protected Rigidbody2D rigidBody;
+    protected SpriteRenderer spriteRenderer;
 
     [Header("Stats")]
     public float speed;
@@ -27,6 +28,7 @@ public class Bullet : MonoBehaviour
 
     private void Start(){
         rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

@@ -9,7 +9,9 @@ public class Enemy : MonoBehaviour
     public int wavepointIndex = 0;
     public float initSpeed;
     public float initHealth;
+    public float upHealth = 50;
     public int reward;
+    public Animator animator;
 
     [Header("Stats")]
     public bool inDOT;
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+
         //move in the direction of the next waypoint
         Vector2 dir = direction.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);   
@@ -39,10 +42,10 @@ public class Enemy : MonoBehaviour
             GetNextWaypoint();
         }
 
-        if(direction.position.x > transform.position.x){
+        if(direction.position.x < transform.position.x){
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        if(direction.position.x < transform.position.x){
+        if(direction.position.x > transform.position.x){
             GetComponent<SpriteRenderer>().flipX = false;
         }
     }
@@ -60,16 +63,31 @@ public class Enemy : MonoBehaviour
         direction = Waypoints.points[wavepointIndex];
     }
 
+    public void Upgrade(){
+        health += upHealth;
+    }
+
     public void TakeDamage(float damage){
         health -= damage;
+        StartCoroutine("DamageAnimation");
         if(health <= 0){
             Die();
         }
     }
 
+    IEnumerator DamageAnimation(){
+        animator.ResetTrigger("Return");
+        animator.SetTrigger("TakeDamage");
+        yield return new WaitForSeconds(0.2f);
+        animator.ResetTrigger("TakeDamage");
+        animator.SetTrigger("Return");
+    }
+
     void Die(){
         PlayerStats.money += reward;
-        Destroy(gameObject);
+        animator.SetTrigger("Death");
+        speed = 0;
+        Destroy(gameObject, 0.4f);
         WaveSpawner.enemiesAlive--;
         PlayerStats.enemiesKilled++;
     }
