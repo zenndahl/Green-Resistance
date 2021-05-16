@@ -98,12 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavepointIndex: 0
-  initSpeed: 1
-  initHealth: 100
-  upHealth: 50
-  reward: 100
+  reward: 30
   animator: {fileID: 6409697922607068126}
   inDOT: 0
+  typeName: Lumberjack
   speed: 1
   health: 0
 --- !u!61 &1692820961839839147

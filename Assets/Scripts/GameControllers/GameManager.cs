@@ -37,12 +37,10 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(isPaused){ 
                 isPaused = false;
-                Debug.Log("Despausar");
                 Resume();
             }
             else if(!isPaused){
                 isPaused = true;
-                Debug.Log("Pausar");
                 Pause();
             }
         }
@@ -57,7 +55,6 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(true);
         shopUI.SetActive(false);
         gameInfosUI.SetActive(false);
-        Debug.Log("Game Over");
     }
 
     public static void Retry(){

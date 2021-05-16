@@ -9233,10 +9233,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.5
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 147
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12636,8 +12636,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jabuticabaTurret:
     hasUpgrade: 0
-    cost: 100
-    upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: ce88e9c1a331fab4387a361a36c6b49f, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12645,8 +12643,6 @@ MonoBehaviour:
     upgrades_2: 000000
   ipeTurret:
     hasUpgrade: 0
-    cost: 150
-    upgradeCost: 200
     prefab: {fileID: 7985164031610571828, guid: 4a654237bee2ca04b8f187a24aa005e5, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12654,8 +12650,6 @@ MonoBehaviour:
     upgrades_2: 000000
   pinhaoTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: 85681b4e748bb0c4fabc0a4dc33a8b5c, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12663,8 +12657,6 @@ MonoBehaviour:
     upgrades_2: 000000
   mamonaTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: 1fa72ed581f64e94591cbdde79246244, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12672,8 +12664,6 @@ MonoBehaviour:
     upgrades_2: 000000
   coquinhoTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: 36db927fd098a6e4fbe595100627233a, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12681,8 +12671,6 @@ MonoBehaviour:
     upgrades_2: 000000
   mandacaruTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12690,8 +12678,6 @@ MonoBehaviour:
     upgrades_2: 000000
   bromeliaTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12699,8 +12685,6 @@ MonoBehaviour:
     upgrades_2: 000000
   cajuTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12708,8 +12692,6 @@ MonoBehaviour:
     upgrades_2: 000000
   aroeiraTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12717,8 +12699,6 @@ MonoBehaviour:
     upgrades_2: 000000
   jamboTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12726,8 +12706,6 @@ MonoBehaviour:
     upgrades_2: 000000
   acaiTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12735,8 +12713,6 @@ MonoBehaviour:
     upgrades_2: 000000
   cocoTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12744,8 +12720,6 @@ MonoBehaviour:
     upgrades_2: 000000
   palmeiraTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12753,8 +12727,6 @@ MonoBehaviour:
     upgrades_2: 000000
   bananaTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12762,8 +12734,6 @@ MonoBehaviour:
     upgrades_2: 000000
   eritrinaTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12771,8 +12741,6 @@ MonoBehaviour:
     upgrades_2: 000000
   figoTurret:
     hasUpgrade: 1
-    cost: 100
-    upgradeCost: 150
     prefab: {fileID: 7985164031610571828, guid: 4022de015840f47469bf8cbf8aa6ded2, type: 3}
     upgrade1Prefab: {fileID: 7985164031610571828, guid: 04191a647ef94b841a79e3bdff3dbd7b, type: 3}
     upgrade2Prefab: {fileID: 7985164031610571828, guid: 1e50ba5d8d7aece4297816354fdd0a38, type: 3}
@@ -12780,8 +12748,6 @@ MonoBehaviour:
     upgrades_2: 000001
   ipe2Turret:
     hasUpgrade: 1
-    cost: 150
-    upgradeCost: 200
     prefab: {fileID: 7985164031610571828, guid: 0148e770f03c8ce408a14863ae7301b1, type: 3}
     upgrade1Prefab: {fileID: 7985164031610571828, guid: 6a285b44be644d846b31bc0db18b1716, type: 3}
     upgrade2Prefab: {fileID: 7985164031610571828, guid: 1b58a12ce347c0340ac9a67117b86af5, type: 3}
@@ -12789,8 +12755,6 @@ MonoBehaviour:
     upgrades_2: 000100
   abacaxiTurret:
     hasUpgrade: 0
-    cost: 200
-    upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: d2734956f99a5d943b5701f5d5857025, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12798,8 +12762,6 @@ MonoBehaviour:
     upgrades_2: 000000
   pequiTurret:
     hasUpgrade: 0
-    cost: 250
-    upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: ee2467f7e59a2f0439772341c6a2060d, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12807,8 +12769,6 @@ MonoBehaviour:
     upgrades_2: 000000
   tamarindoTurret:
     hasUpgrade: 0
-    cost: 300
-    upgradeCost: 0
     prefab: {fileID: 7985164031610571828, guid: f3ecbd564e3f8ce42adfd15662a365b4, type: 3}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12816,8 +12776,6 @@ MonoBehaviour:
     upgrades_2: 000000
   guaranaTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12825,8 +12783,6 @@ MonoBehaviour:
     upgrades_2: 000000
   castanhaTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12834,8 +12790,6 @@ MonoBehaviour:
     upgrades_2: 000000
   urucumTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12843,8 +12797,6 @@ MonoBehaviour:
     upgrades_2: 000000
   carnivoraTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -12852,8 +12804,6 @@ MonoBehaviour:
     upgrades_2: 000000
   cacauTurret:
     hasUpgrade: 0
-    cost: 0
-    upgradeCost: 0
     prefab: {fileID: 0}
     upgrade1Prefab: {fileID: 0}
     upgrade2Prefab: {fileID: 0}
@@ -13269,6 +13219,7 @@ GameObject:
   - component: {fileID: 1331273744}
   - component: {fileID: 1331273748}
   - component: {fileID: 1331273749}
+  - component: {fileID: 1331273750}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -13301,8 +13252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52fd8796afbd0aa44bc2507054e32e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 9999
-  startLives: 10
+  startMoney: 20000
+  startLives: 20
 --- !u!114 &1331273746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13310,7 +13261,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331273743}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2358d619dbbaa544192874a6983fa44f, type: 3}
   m_Name: 
@@ -13322,6 +13273,7 @@ MonoBehaviour:
   waveCountdownTimer: {fileID: 728357897}
   endLevel: {fileID: 187660086}
   waveCount: 50
+  enemiesSpawned: 0
 --- !u!4 &1331273747
 Transform:
   m_ObjectHideFlags: 0
@@ -13375,6 +13327,18 @@ MonoBehaviour:
   shopUI: {fileID: 1310520486}
   gameInfosUI: {fileID: 1737551497}
   pauseUI: {fileID: 1928373389}
+--- !u!114 &1331273750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331273743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5075029cacded1a469a5e827fdd970d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1352599265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14899,6 +14863,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5664948239315647848, guid: eb1059a5c7bd5fd4b9db536fbd0645d4, type: 3}
   m_PrefabInstance: {fileID: 1431515031}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1434279010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434279012}
+  - component: {fileID: 1434279011}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1434279011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434279010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d02084ea6cdc446aad3ae71418de11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Music
+    clip: {fileID: 8300000, guid: 41b50c89a623fcd4598a7050308e6c84, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Shooting
+    clip: {fileID: 8300000, guid: cfc3f0624cafad2409f86bef91ebc6e4, type: 3}
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Burst
+    clip: {fileID: 8300000, guid: 548efe517cf23b549be0727478123471, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Hit
+    clip: {fileID: 8300000, guid: a44bf220fe0bc11438b16ea10b78bca1, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dying
+    clip: {fileID: 8300000, guid: 7c593c3cd965a2145bbe6cd89164507c, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Build
+    clip: {fileID: 8300000, guid: 641611b771f0bd84d8fa86d1b760d544, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Upgrade
+    clip: {fileID: 8300000, guid: 5f59f42258cce3845a1836964537fa80, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: WaveAlert
+    clip: {fileID: 8300000, guid: c4bb55f8d40f0f247a363c957f2f2435, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: StrongerEnemies
+    clip: {fileID: 8300000, guid: ca2f8009884ab6740b6d5d57f7fe62a2, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: LevelCompleted
+    clip: {fileID: 8300000, guid: 3709f6bf9be3c924da680777c7faf7c8, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+--- !u!4 &1434279012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434279010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.44249067, y: -0.062495794, z: -1.3775741}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1443935230
 PrefabInstance:
   m_ObjectHideFlags: 0

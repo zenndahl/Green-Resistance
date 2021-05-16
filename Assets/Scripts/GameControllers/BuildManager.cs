@@ -53,5 +53,5 @@ public class BuildManager : MonoBehaviour
     public bool CanBuild{get{return turretToBuild != null;}}
 
     //check if there is enough money to purschase selected turret
-    public bool HasMoney{get{return PlayerStats.money >= turretToBuild.cost;}}
+    public bool HasMoney{get{return PlayerStats.money >= turretToBuild.prefab.GetComponent<Turret>().cost;}}
 }

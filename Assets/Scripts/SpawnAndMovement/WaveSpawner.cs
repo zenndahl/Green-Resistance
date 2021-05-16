@@ -27,9 +27,10 @@ public class WaveSpawner : MonoBehaviour
     private void Update() {
 
         //if the game is in normal mode, the game ends when the waves reach the total count of the level
-        if(!GameManager.zenMode && enemiesAlive == 0){
-            if(waveIndex == waveCount){
+        if(GameManager.zenMode == false){
+            if(waveIndex == waveCount && enemiesAlive == 0){
                 endLevel.SetActive(true);
+                FindObjectOfType<AudioManager>().PlayAudio("LevelCompleted");
                 levelEnded = true;
                 return;
             }
@@ -42,6 +43,13 @@ public class WaveSpawner : MonoBehaviour
         }
         else{
             waveCountdownTimer.enabled = true;
+        }
+
+        if(countdown <= 1){
+            if((waveIndex % 2 == 0 || waveIndex % 3 == 0) && waveIndex != 0){
+                FindObjectOfType<AudioManager>().PlayAudio("StrongerEnemies");
+            }
+            else FindObjectOfType<AudioManager>().PlayAudio("WaveAlert");
         }
 
         //when the coutdown ends, a coroutine will begin and instantiate the enemies
@@ -67,7 +75,13 @@ public class WaveSpawner : MonoBehaviour
         }
         else{
             int index = 0; //to access the index of the enemies vector 
-            foreach(int enemyQuantity in wave.count){ //for each enemy, it gets its quantity to spawn
+            //each 3 waves, enemies stats will upgrade their health
+            if(waveIndex % 3 == 0 && waveIndex != 0) {
+                EnemyStats.UpgradeHealth();
+            }
+
+            //for each enemy type, it gets its quantity to spawn for that type
+            foreach(int enemyQuantity in wave.count){
                 totalEnemies += enemyQuantity;
                 if(enemyQuantity != 0){
                     for (int i = 0; i < enemyQuantity; i++){
@@ -83,19 +97,18 @@ public class WaveSpawner : MonoBehaviour
         if(waveIndex % 2 == 0 && wave.indexOfIncrement <= 5) wave.AddEnemyType();
         //for each odds wave, the spawning enemy types will spawn more units
         if(waveIndex % 2 != 0) wave.Increment();
-        //after the 15 wave, at every 5 waves, more bosses will spawn
+        //after the 15 wave, at every 5 waves, more bosses will spawn (disabled for now)
         //if(waveIndex % 5 == 0 && waveIndex >= 15) wave.CallBoss();
-        if(waveIndex % 5 == 0) countdown += 10;
+        if(waveIndex % 5 == 0 && waveIndex != 0) countdown += 10;
 
         waveIndex++;
         PlayerStats.rounds = waveIndex;
     }
 
     void spawnEnemy(GameObject enemy){
-        //instantiate an enemy and add it to the list of alive enemies
-        Instantiate(enemy.transform, spawnPoint.position, spawnPoint.rotation);
-        //each 5 waves, nemies stats will upgrade
-        //if(waveIndex % 5 == 0) spawned.GetComponent<Enemy>().Upgrade();
+        //instantiate an enemy and add the number of alive spawned and alive
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        
         enemiesSpawned++;
         enemiesAlive++;
     }

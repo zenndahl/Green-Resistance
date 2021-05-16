@@ -7,22 +7,18 @@ public class TurretBlueprint {
     public bool hasUpgrade;
 
     [Header("Prefabs")]
-    public int cost;
-    public int upgradeCost;
-
-    public int sellPrice => (upgradeCost > 2 * cost) ? upgradeCost/2 : cost/2;
     public GameObject prefab;
     public GameObject upgrade1Prefab;
     public GameObject upgrade2Prefab;
+
     public bool[] upgrades_1 = new bool[3];
     public bool[] upgrades_2 = new bool[3];
-    // public bool upgradeDamage;
-    // public bool upgradeFireRate;
-    // public bool upgradeRange;
 
     private Turret turret;
 
-    public void SetUpgradeCost(){
-        upgradeCost = 3 * cost;
+    public GameObject GetPrefab(int upNum){
+        if(upNum == 1) return upgrade1Prefab;
+        else return upgrade2Prefab;
+        
     }
 }

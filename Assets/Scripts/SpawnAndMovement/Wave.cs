@@ -22,7 +22,6 @@ public class Wave : MonoBehaviour{
     //on evens indexes of the wave, calls this function and starts the spawning cicle of next enemy
     public void AddEnemyType(){
         count[indexOfIncrement] = initialCount;
-        Debug.Log(indexOfIncrement);
         if(indexOfIncrement >= 4) return;
         indexOfIncrement++;
     }

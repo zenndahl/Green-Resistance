@@ -33,22 +33,22 @@ public class TurretUI : MonoBehaviour
         fireRateUI.text = "Fire Rate: " + turret.fireRate.ToString();
         rangeUI.text = "Range: " + turret.range.ToString();
 
-        sellAmount.text = target.turretBlueprint.sellPrice.ToString();
+        sellAmount.text = target.turret.GetComponent<Turret>().sellPrice.ToString();
 
         if(!target.turretBlueprint.hasUpgrade){
             upgradeCost.text = "No Máximo!";
             upgradeButton.interactable = false;
             return;
         }
-
         if(target.turret.GetComponent<Turret>().wichUpgrade < 2){
-            upgradeCost.text = "R$" + target.turretBlueprint.upgradeCost.ToString();
+            upgradeCost.text = "R$" + target.turret.GetComponent<Turret>().upgradeCost.ToString();
             upgradeButton.interactable = true;
         }
         else{ 
             upgradeCost.text = "No Máximo!";
             upgradeButton.interactable = false;
         }
+        
         //TurretUpgradeStats from the upgrade prefab
         name_1.text = turret.turretName;
         if(target.turret.GetComponent<Turret>().wichUpgrade == 0){

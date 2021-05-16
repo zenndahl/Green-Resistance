@@ -7,17 +7,16 @@ public class Enemy : MonoBehaviour
     [Header("Setup")]
     protected Transform direction;
     public int wavepointIndex = 0;
-    public float initSpeed;
-    public float initHealth;
-    public float upHealth = 50;
     public int reward;
     public Animator animator;
 
     [Header("Stats")]
     public bool inDOT;
+    public string typeName;
 
-    //[HideInInspector]
+    [HideInInspector]
     public float speed;
+    [HideInInspector]
     public float health;
 
     // Start is called before the first frame update
@@ -25,8 +24,8 @@ public class Enemy : MonoBehaviour
     {
         //get the first waypoint
         direction = Waypoints.points[wavepointIndex];
-        speed = initSpeed;
-        health = initHealth;
+        health = EnemyStats.GetHealth(typeName);
+        speed = EnemyStats.GetSpeed(typeName);
     }
 
     // Update is called once per frame
@@ -63,10 +62,6 @@ public class Enemy : MonoBehaviour
         direction = Waypoints.points[wavepointIndex];
     }
 
-    public void Upgrade(){
-        health += upHealth;
-    }
-
     public void TakeDamage(float damage){
         health -= damage;
         StartCoroutine("DamageAnimation");
@@ -86,6 +81,7 @@ public class Enemy : MonoBehaviour
     void Die(){
         PlayerStats.money += reward;
         animator.SetTrigger("Death");
+        FindObjectOfType<AudioManager>().PlayAudio("Dying");
         speed = 0;
         Destroy(gameObject, 0.4f);
         WaveSpawner.enemiesAlive--;
