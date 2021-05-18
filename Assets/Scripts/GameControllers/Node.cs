@@ -90,12 +90,12 @@ public class Node : MonoBehaviour
     void BuildTurret(TurretBlueprint blueprint){
         
         //if the money is not enough, return
-        if(PlayerStats.money < blueprint.cost){
+        if(PlayerStats.money < blueprint.prefab.GetComponent<Turret>().cost){
             return;
         }
 
         //subtracts player money by the turret cost
-        PlayerStats.money -= blueprint.cost;
+        PlayerStats.money -= blueprint.prefab.GetComponent<Turret>().cost;
 
         //instantiate the turret and set the node references for the turret and the blueprint used
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(blueprint.prefab), Quaternion.identity);
@@ -130,28 +130,30 @@ public class Node : MonoBehaviour
 
     //called when the upgrade button on the UI is pressed
     public void UpgradeTurret(){
-
-        //if not enough money, dont do the upgrade
-        if(PlayerStats.money < turretBlueprint.upgradeCost){
-            return;
-        }
-
-        //if there is enough money, it is subtracted by the upgrade cost
-        PlayerStats.money -= turretBlueprint.upgradeCost;
-
-        //destroy the old turret
-        Destroy(turret);
         GameObject _turret;
 
         if(turret.GetComponent<Turret>().wichUpgrade == 0){
+            //if not enough money, dont do the upgrade
+            if(PlayerStats.money < turretBlueprint.upgrade1Prefab.GetComponent<Turret>().cost){
+                return;
+            }
             //building the upgraded turret
             _turret = (GameObject)Instantiate(turretBlueprint.upgrade1Prefab, GetBuildPosition(turretBlueprint.upgrade1Prefab), Quaternion.identity);
+            //if there is enough money, it is subtracted by the upgrade cost
+            PlayerStats.money -= turretBlueprint.upgrade1Prefab.GetComponent<Turret>().cost;
         }
         else{
+            //if not enough money, dont do the upgrade
+            if(PlayerStats.money < turretBlueprint.upgrade2Prefab.GetComponent<Turret>().cost){
+                return;
+            }
             _turret = (GameObject)Instantiate(turretBlueprint.upgrade2Prefab, GetBuildPosition(turretBlueprint.upgrade2Prefab), Quaternion.identity);
+            PlayerStats.money -= turretBlueprint.upgrade2Prefab.GetComponent<Turret>().cost;
         }
 
-        turretBlueprint.SetUpgradeCost();
+        //destroy the old turret
+        Destroy(turret);
+        
         turret = _turret;
         //here, the blueprint is the same, so there is no need for a new attribution
 
@@ -175,7 +177,7 @@ public class Node : MonoBehaviour
 
     //remove the turret from the node and get some money back
     public void SellTurret(){
-        PlayerStats.money += turretBlueprint.sellPrice;
+        PlayerStats.money += turret.GetComponent<Turret>().sellPrice;
         Destroy(turret);
         turretBlueprint = null;
     }

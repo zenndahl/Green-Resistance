@@ -146,12 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavepointIndex: 0
-  initSpeed: 2
-  initHealth: 50
-  upHealth: 25
-  reward: 10
+  reward: 5
   animator: {fileID: 9037375320035051564}
   inDOT: 0
+  typeName: Dog
   speed: 0
   health: 0
 --- !u!95 &9037375320035051564

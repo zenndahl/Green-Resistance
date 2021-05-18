@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1635520533
   m_SortingLayer: 4
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: dec62b8c6ae1f1646917d80ef19384a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ba3e80921cb5aa48a6a580035055270, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,11 +111,13 @@ MonoBehaviour:
   wichUpgrade: 0
   firePoint: {fileID: 1824153697004183994}
   posOffset: {x: 0, y: 0.25, z: 0}
+  cost: 300
+  upgradeCost: 450
   target: {fileID: 0}
   enemyTag: Enemy
   node: {fileID: 0}
   bulletPrefab: {fileID: 0}
-  burstEffect: {fileID: 5839320798863239836, guid: 6f1e40630968b0c428b933a333b1dc1f, type: 3}
+  burstEffect: {fileID: 5839320798863239836, guid: 8831f4ac9bbb8d34e9af7c4a284d9ee7, type: 3}
 --- !u!61 &-8765304873778744623
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     public string levelToLoad = "Pantanal";
-    public GameObject SelectModeUI;
+    public GameObject selectModeUI;
+    public GameObject creditosUI;
 
     public void Play(){
         Debug.Log("Loading " + levelToLoad);
@@ -14,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void SelectMode(){
-        SelectModeUI.SetActive(true);
+        selectModeUI.SetActive(true);
     }
 
     public void Normal(){
@@ -25,6 +26,14 @@ public class MainMenu : MonoBehaviour
     public void ZenMode(){
         GameManager.zenMode = true;
         Play();
+    }
+
+    public void Creditos(){
+        creditosUI.SetActive(true);
+    }
+
+    public void Voltar(){
+        creditosUI.SetActive(false);
     }
 
     public void Quit(){

@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     protected Transform target;
     protected Rigidbody2D rigidBody;
     protected SpriteRenderer spriteRenderer;
+    public string soundEffectName = "Hit";
 
     [Header("Stats")]
     public float speed;
@@ -57,6 +58,7 @@ public class Bullet : MonoBehaviour
 
     public virtual void HitTarget(){
         //instantiate hit effect and sound
+        FindObjectOfType<AudioManager>().PlayAudio(soundEffectName);
         Damage();
         //destroy hit effect and sound
     }

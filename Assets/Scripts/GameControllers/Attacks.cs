@@ -15,6 +15,8 @@ public class Attacks : MonoBehaviour
         //creates the bullet object on scene
         GameObject bulletGO = GameObject.Instantiate(bulletPrefab, firePointPos, firePointRot);
 
+        FindObjectOfType<AudioManager>().PlayAudio("Shooting");
+
         //get the bullet component to access its variables and methods
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         bullet.damage = damage;
@@ -31,6 +33,8 @@ public class Attacks : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //instantiate effect
         GameObject RadialBurst = GameObject.Instantiate(burstEffect, firePointPos, firePointRot);
+
+        FindObjectOfType<AudioManager>().PlayAudio("Burst");
 
         foreach(GameObject enemy in enemies){
             //gets the distance between the enemy

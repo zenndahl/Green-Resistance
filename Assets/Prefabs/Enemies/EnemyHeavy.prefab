@@ -98,12 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavepointIndex: 0
-  initSpeed: 0.5
-  initHealth: 100
-  upHealth: 100
-  reward: 50
+  reward: 20
   animator: {fileID: 1695350082095328384}
   inDOT: 0
+  typeName: Heavy
   speed: 1
   health: 0
 --- !u!61 &1692820961839839147

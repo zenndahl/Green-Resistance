@@ -20,16 +20,16 @@ public class SlowShot : Bullet
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-        spriteRenderer.enabled = false;
+        //spriteRenderer.enabled = false;
         if(target == null) return;
         Enemy enemy = target.GetComponent<Enemy>();
-        enemy.speed = (enemy.initSpeed * slowMod);
+        enemy.speed = (EnemyStats.GetSpeed(enemy.typeName) * slowMod);
         //this.GetComponent<SpriteRenderer>().sortingLayerName = "Turret";
     }
 
     private void OnDestroy() {
         if(target == null) return;
         Enemy enemy = target.GetComponent<Enemy>();
-        enemy.speed = enemy.initSpeed;
+        enemy.speed = EnemyStats.GetSpeed(enemy.typeName);
     }
 }

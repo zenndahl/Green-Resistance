@@ -12,7 +12,6 @@ public class Turret : MonoBehaviour{
     public float atkDamage;
     public float shootCooldown = 0.5f;
 
-    
     [Header("Conditional Status")]
     public bool inRange;
     public bool inDOT;
@@ -24,6 +23,9 @@ public class Turret : MonoBehaviour{
     [Header("Turret Setup")]
     public Transform firePoint;
     public Vector3 posOffset;
+    public int cost;
+    public int upgradeCost;
+    public int sellPrice => cost/2;
 
     [Header("Enemy Setup")]
     public Transform target;

@@ -111,6 +111,8 @@ MonoBehaviour:
   wichUpgrade: 0
   firePoint: {fileID: 1824153697004183994}
   posOffset: {x: 0, y: 0.35, z: 0}
+  cost: 300
+  upgradeCost: 0
   target: {fileID: 0}
   enemyTag: Enemy
   node: {fileID: 0}

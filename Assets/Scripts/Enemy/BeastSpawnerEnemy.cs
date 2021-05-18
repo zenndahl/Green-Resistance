@@ -14,8 +14,8 @@ public class BeastSpawnerEnemy : Enemy
     {
         //get the first waypoint
         direction = Waypoints.points[wavepointIndex];
-        speed = initSpeed;
-        health = initHealth;
+        health = EnemyStats.GetHealth(typeName);
+        speed = EnemyStats.GetSpeed(typeName);
 
         StartCoroutine(SpawnBeast());
     }
