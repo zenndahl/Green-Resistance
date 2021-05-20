@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretName: Tamarindo
   range: 1
-  fireRate: 1
+  fireRate: 1.5
   health: 50
   atkDamage: 25
   shootCooldown: 0.5
