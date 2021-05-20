@@ -29,9 +29,9 @@ public class TurretUI : MonoBehaviour
 
         //TurretStats from the present tower
         name_2.text = turret.turretName;
-        damageUI.text = "Damage: " + turret.atkDamage.ToString();
-        fireRateUI.text = "Fire Rate: " + turret.fireRate.ToString();
-        rangeUI.text = "Range: " + turret.range.ToString();
+        damageUI.text = "Dano: " + turret.atkDamage.ToString();
+        fireRateUI.text = "Velocidade: " + turret.fireRate.ToString();
+        rangeUI.text = "Alcance: " + turret.range.ToString();
 
         sellAmount.text = target.turret.GetComponent<Turret>().sellPrice.ToString();
 
