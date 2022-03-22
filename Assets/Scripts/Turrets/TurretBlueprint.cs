@@ -6,6 +6,8 @@ using UnityEngine;
 public class TurretBlueprint {  
     public bool hasUpgrade;
 
+    //TODO MAKE THIS AN SCRIPTABLE OBJECT
+
     [Header("Prefabs")]
     public GameObject prefab;
     public GameObject upgrade1Prefab;

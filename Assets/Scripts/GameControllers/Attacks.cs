@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Attacks : MonoBehaviour
 {
-    [Header("Base Stats")] 
-    public static float baseDamage = 25f;
-    public static float baseRange = 1.1f;
-    public static float baseHealth = 50f;
-    public static float baseFireRate = 1f;
+    //[Header("Base Stats")] 
+    //public static float baseDamage = 25f;
+    //public static float baseRange = 1.1f;
+    //public static float baseHealth = 50f;
+    //public static float baseFireRate = 1f;
+    
+    void Start()
+    {
+
+    }
 
     public static void Shoot(Transform target, GameObject bulletPrefab, Vector3 firePointPos, 
                             Quaternion firePointRot, float damage){

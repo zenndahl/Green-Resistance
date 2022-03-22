@@ -21,24 +21,25 @@ public class Bullet : MonoBehaviour
     public bool isGrenade;
     public Vector3 hitPoint;
     
-    public void Seek(Transform _target){
-        if(_target == null) return;
-        target = _target;
-        hitPoint = target.position;
-    }
 
     private void Start(){
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
+    public void Seek(Transform _target){
+        if(_target == null) return;
+        target = _target;
+        hitPoint = target.position;
+    }
+
     void Update()
     {
         if(target == null){
             Destroy(gameObject);
             return;
         }
+
         Vector3 direction;
         if(!isGrenade){
             direction = (Vector2)target.position - rigidBody.position;
@@ -60,7 +61,7 @@ public class Bullet : MonoBehaviour
         //instantiate hit effect and sound
         FindObjectOfType<AudioManager>().PlayAudio(soundEffectName);
         Damage();
-        //destroy hit effect and sound
+        //TODO destroy effect and sound
     }
 
     public virtual void Damage(){

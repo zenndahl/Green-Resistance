@@ -17,8 +17,8 @@ public class WaveSpawner : MonoBehaviour
     private int waveIndex = 0;
     private bool levelEnded = false;
     private int totalEnemies = 0;
+    private int enemiesSpawned = 0;
     public static int enemiesAlive = 0;
-    public int enemiesSpawned = 0;
 
     private void Start() {
         betweenTime = initialCountdownTime;
@@ -27,7 +27,7 @@ public class WaveSpawner : MonoBehaviour
     private void Update() {
 
         //if the game is in normal mode, the game ends when the waves reach the total count of the level
-        if(GameManager.zenMode == false){
+        if(!GameManager.zenMode){
             if(waveIndex == waveCount && enemiesAlive == 0){
                 endLevel.SetActive(true);
                 FindObjectOfType<AudioManager>().PlayAudio("LevelCompleted");
@@ -45,6 +45,7 @@ public class WaveSpawner : MonoBehaviour
             waveCountdownTimer.enabled = true;
         }
 
+        //verifying if the next wave has stronger enemies to play the right audio cue
         if(countdown <= 1){
             if((waveIndex % 2 == 0 || waveIndex % 3 == 0) && waveIndex != 0){
                 FindObjectOfType<AudioManager>().PlayAudio("StrongerEnemies");
@@ -58,6 +59,7 @@ public class WaveSpawner : MonoBehaviour
             countdown = betweenTime; //reset the countdown
             return;
         }
+
         //update the time between waves
         countdown -= Time.deltaTime;
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
@@ -66,7 +68,7 @@ public class WaveSpawner : MonoBehaviour
         waveCountdownTimer.text = Mathf.Round(countdown).ToString();
         waveCountdownTimer.text = string.Format("{0:00.00}", countdown);
 
-        //fazer a contagem desaparecer enquanto tiver inimigos na tela
+        //TODO fazer a contagem desaparecer enquanto tiver inimigos na tela
     }
 
     IEnumerator spawnWave(){
@@ -75,9 +77,9 @@ public class WaveSpawner : MonoBehaviour
         }
         else{
             int index = 0; //to access the index of the enemies vector 
-            //each 3 waves, enemies stats will upgrade their health
-            if(waveIndex % 3 == 0 && waveIndex != 0) {
-                EnemyStats.UpgradeHealth();
+            //each 3 waves, enemies will have a health upgrade
+            if (waveIndex % 3 == 0 && waveIndex != 0) {
+                EnemyStats.instance.UpgradeHealth();
             }
 
             //for each enemy type, it gets its quantity to spawn for that type

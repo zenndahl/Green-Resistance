@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public static bool zenMode = false;
     //public PauseMenu pauseMenuUI;
     
-    // Start is called before the first frame update
     void Start()
     {
         //Time.timeScale = 1;
@@ -23,7 +22,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(gameIsOver == true){

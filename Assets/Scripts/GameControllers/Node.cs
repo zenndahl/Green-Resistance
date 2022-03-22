@@ -92,11 +92,13 @@ public class Node : MonoBehaviour
         //if the money is not enough, return
         if(PlayerStats.money < blueprint.prefab.GetComponent<Turret>().cost){
             return;
+            //usar um evento para quando não tiver dinheiro?
         }
 
         //subtracts player money by the turret cost
         PlayerStats.money -= blueprint.prefab.GetComponent<Turret>().cost;
 
+        //usar evento para a construção da turret?
         //instantiate the turret and set the node references for the turret and the blueprint used
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(blueprint.prefab), Quaternion.identity);
         turret = _turret;
@@ -128,6 +130,7 @@ public class Node : MonoBehaviour
         return;
     }
 
+    //REVISAR SISTEMA DE UPGRADE
     //called when the upgrade button on the UI is pressed
     public void UpgradeTurret(){
         GameObject _turret;

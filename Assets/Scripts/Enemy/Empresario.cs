@@ -91,7 +91,7 @@ public class Empresario : Boss
     IEnumerator StopToAttack(){
         speed = 0;
         yield return new WaitForSeconds(stopTime);
-        speed = EnemyStats.GetSpeed(typeName);
+        speed = EnemyStats.instance.GetSpeed(typeName);
     }
 
     private void OnDrawGizmosSelected() {

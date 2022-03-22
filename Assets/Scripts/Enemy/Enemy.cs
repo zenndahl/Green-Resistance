@@ -24,8 +24,8 @@ public class Enemy : MonoBehaviour
     {
         //get the first waypoint
         direction = Waypoints.points[wavepointIndex];
-        health = EnemyStats.GetHealth(typeName);
-        speed = EnemyStats.GetSpeed(typeName);
+        health = EnemyStats.instance.GetHealth(typeName);
+        speed = EnemyStats.instance.GetSpeed(typeName);
     }
 
     // Update is called once per frame

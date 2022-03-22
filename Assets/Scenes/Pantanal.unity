@@ -9055,7 +9055,7 @@ GameObject:
   - component: {fileID: 935079156}
   - component: {fileID: 935079155}
   m_Layer: 5
-  m_Name: GUI
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13812,7 +13812,7 @@ GameObject:
   - component: {fileID: 1331273749}
   - component: {fileID: 1331273750}
   m_Layer: 0
-  m_Name: GameMaster
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

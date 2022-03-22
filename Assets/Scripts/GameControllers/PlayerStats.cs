@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour{
     
+    //TODO MAKE THIS A SCRIPTABLE OBJECT
+
     public static int money;
     public static int lives;
     public int startMoney = 200;

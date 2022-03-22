@@ -9,8 +9,8 @@ public class Boss : Enemy
     {
         //get the first waypoint
         direction = Waypoints.bossPoints[wavepointIndex];
-        health = EnemyStats.GetHealth(typeName);
-        speed = EnemyStats.GetSpeed(typeName);
+        health = EnemyStats.instance.GetHealth(typeName);
+        speed = EnemyStats.instance.GetSpeed(typeName);
     }
 
 }

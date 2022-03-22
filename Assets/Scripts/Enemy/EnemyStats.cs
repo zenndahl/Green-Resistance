@@ -5,82 +5,93 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public static EnemyStats instance;
+
+    //TODO MAKE THIS AN SCRIPTABLE OBJECT
+
     [Header("Farmer")]
-    public static float initFarmerHealth = 50f;
-    public static float upgradeFarmerHealth = 50f;
-    public static float initFarmerSpeed = 1f;
+    public float initFarmerHealth = 50f;
+    public float upgradeFarmerHealth = 50f;
+    public float initFarmerSpeed = 1f;
 
     [Header("Heavy")]
-    public static float initHeavyHealth = 100f;
-    public static float upgradeHeavyHealth = 100f;
-    public static float initHeavySpeed = 0.5f;
+    public float initHeavyHealth = 100f;
+    public float upgradeHeavyHealth = 100f;
+    public float initHeavySpeed = 0.5f;
 
     [Header("DogMaster")]
-    public static float initDogMasterHealth = 100f;
-    public static float upgradeDogMasterHealth = 50f;
-    public static float initDogMasterSpeed = 0.7f;
+    public float initDogMasterHealth = 100f;
+    public float upgradeDogMasterHealth = 50f;
+    public float initDogMasterSpeed = 0.7f;
 
     [Header("Lumberjack")]
-    public static float initLumberjackHealth = 100f;
-    public static float upgradeLumberjackHealth = 100f;
-    public static float initLumberjackSpeed = 1f;
+    public float initLumberjackHealth = 100f;
+    public float upgradeLumberjackHealth = 100f;
+    public float initLumberjackSpeed = 1f;
     
     [Header("Dog")]
-    public static float initDogHealth = 25f;
-    public static float upgradeDogHealth = 25f;
-    public static float initDogSpeed = 1.5f;
+    public float initDogHealth = 25f;
+    public float upgradeDogHealth = 25f;
+    public float initDogSpeed = 1.5f;
 
     private void Awake() {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public static float GetHealth(string type){
+    public float GetHealth(string type){
         if(type == "Farmer"){
-            return initFarmerHealth;
+            return instance.initFarmerHealth;
         }
         if(type == "Heavy"){
-            return initHeavyHealth;
+            return instance.initHeavyHealth;
         }
         if(type == "DogMaster"){
-            return initDogMasterHealth;
+            return instance.initDogMasterHealth;
         }
         if(type == "Lumberjack"){
-            return initLumberjackHealth;
+            return instance.initLumberjackHealth;
         }
         if(type == "Dog"){
-            return initDogHealth;
+            return instance.initDogHealth;
         }
         else{
             return 100;
         }
     }
 
-    public static float GetSpeed(string type){
+    public float GetSpeed(string type){
         if(type == "Farmer"){
-            return initFarmerSpeed;
+            return instance.initFarmerSpeed;
         }
         if(type == "Heavy"){
-            return initHeavySpeed;
+            return instance.initHeavySpeed;
         }
         if(type == "DogMaster"){
-            return initDogMasterSpeed;
+            return instance.initDogMasterSpeed;
         }
         if(type == "Lumberjack"){
-            return initLumberjackSpeed;
+            return instance.initLumberjackSpeed;
         }
         if(type == "Dog"){
-            return initDogSpeed;
+            return instance.initDogSpeed;
         }
         else{
             return 1;
         }
     }
 
-    public static void UpgradeHealth(){
-        initFarmerHealth += upgradeFarmerHealth;
-        initHeavyHealth += upgradeHeavyHealth;
-        initDogMasterHealth += upgradeDogMasterHealth;
-        initLumberjackHealth += upgradeLumberjackHealth;
-        initDogHealth += upgradeDogHealth;
+    public void UpgradeHealth(){
+        instance.initFarmerHealth += upgradeFarmerHealth;
+        instance.initHeavyHealth += upgradeHeavyHealth;
+        instance.initDogMasterHealth += upgradeDogMasterHealth;
+        instance.initLumberjackHealth += upgradeLumberjackHealth;
+        instance.initDogHealth += upgradeDogHealth;
     }
 }

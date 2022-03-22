@@ -13,7 +13,7 @@ public class BossChainsaw : Boss
             speed = 0;
             return;
         }
-        speed = EnemyStats.GetSpeed(typeName);;
+        speed = EnemyStats.instance.GetSpeed(typeName);;
         return;
     }
 }

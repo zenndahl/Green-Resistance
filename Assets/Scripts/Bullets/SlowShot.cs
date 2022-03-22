@@ -23,13 +23,13 @@ public class SlowShot : Bullet
         //spriteRenderer.enabled = false;
         if(target == null) return;
         Enemy enemy = target.GetComponent<Enemy>();
-        enemy.speed = (EnemyStats.GetSpeed(enemy.typeName) * slowMod);
+        enemy.speed = (EnemyStats.instance.GetSpeed(enemy.typeName) * slowMod);
         //this.GetComponent<SpriteRenderer>().sortingLayerName = "Turret";
     }
 
     private void OnDestroy() {
         if(target == null) return;
         Enemy enemy = target.GetComponent<Enemy>();
-        enemy.speed = EnemyStats.GetSpeed(enemy.typeName);
+        enemy.speed = EnemyStats.instance.GetSpeed(enemy.typeName);
     }
 }
